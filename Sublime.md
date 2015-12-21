@@ -1,0 +1,28 @@
+
+Sublime packages
+
+>OmniMarkupPreviewer: Live preview  
+	Command + Alt + O  
+>Seti UI : (Sublime 3) UI
+
+
+Japanese 入力 (use tab for list)
+-----
+Comment out auto_completion using which recognizes "tab" button
+
+> 
+Packages/Default folderを作り、Default\ \(OSX\).sublime-keymap 設定ファイルを置く。 その後、Key Bindings - Defaultから設定を開くとちゃんと編集できる。
+
+```
+$ cd Library/Application\ Support/Sublime\ Text\ 3
+$ mkdir Packages/Default
+$ mv ~/Default\ \(OSX\).sublime-keymap ./Packages/Default/
+```
+> ３行目はなかったら、Defaultの方からinsert_best_completion, replace_completion_with_next_completion : tab -> shift + tab
+
+#Latex Compiler & pdf sync
+http://economistry.com/2013/01/installing-and-using-latex-for-mac/
+LatexTools + Skim
+
+#Latex autocomplete
+Packages: LaTexIng, Latex-cwl
