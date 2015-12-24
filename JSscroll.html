@@ -1,0 +1,105 @@
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<script type="text/javascript">
+window.onscroll = function (e) {  
+ alert($(".back-to-top").offset().top)
+} 
+</script>
+
+<script type="text/javascript">
+
+    var root = $("html, body"),
+        t = 200, //overall duration for the animation, you can set this
+        idnow = 1;
+
+    function scroll_to(id) {
+        root.animate({
+            scrollTop: $("#" + id).offset().top
+        }, t);
+    }
+
+    $(document).ready(function () {
+        $(".scrollUp").click(function () {
+            idnow = idnow - 1;
+            if (idnow === 1) $(this).hide();
+            if (idnow === 5) $(".scrollDown").show();
+            scroll_to(idnow);
+
+        });
+        $(".scrollDown").click(function () {
+            idnow = idnow + 1;
+            if (idnow === 1) $(".scrollUp").show();
+            if (idnow === 6) $(this).hide();
+            scroll_to(idnow);
+        });
+
+        $(window).scroll(function () {
+            return false;
+        });
+    });
+</script>
+
+<style type="text/css">
+
+body {
+    height:3000px;
+}
+div > .scrollUp {
+    position:fixed;
+    right: 30px;
+    top: 30px;
+    display: none;
+}
+div > .scrollDown {
+    position:fixed;
+    right: 30px;
+    bottom: 30px;
+}
+</style>
+
+<div>
+    <button class="scrollUp">scroll UP</button> <a href="#" class="back-to-top" style="display: inline;">
+<i class="fa fa-arrow-circle-up"></i>
+</a>
+
+    <br/>
+    <button class="scrollDown">scroll Down</button>
+</div>
+
+<h3 class="text-center">АНГИР ГЭЖ ЮУ ВЭ?</h3>
+
+<div id="1" class="text-justify">
+    <br>Ангир.мн бол гадаадад суралцаж буй оюутан залуусыг амралтаараа эх орондоо сонирхож буй ажлын байрандаа дадлага хийх боломжийг олгох зорилго бүхий платформ юм. Бид уг платформоор дамжуулан Монголын хөдөлмөрийн зах зээлийн цогц мэдээллийг хүргэхээс гадна ирээдүйн ажлын байр, албан байгууллагуудынхаа компанийн соёл, үнэт зүйлс болон алсын хараатай танилцах боломжийг олгох болно.
+    <br>
+</div>
+<div>
+    <div id="2" class="angirtron">
+        <br>Бид Монголын бизнесийн салбарт хамгийн амжилттай ажиллаж буй компаниудад зуны болон өвлийн амралтаараа дадлага хийх боломжийг ОЮУТАН танд олгох болно.
+        <br>
+    </div>
+    <div id="3" class="angirtron">
+        
+        <br>Бид дэлхийн шилдэг их дээд сургуулиудад амжилттай суралцаж буй ирээдүйн чадварлаг боловсон хүчин-оюутан залуусыг КОМПАНИ танд санал болгох болно.
+        <br>
+    </div>
+    <div id="4" class="angirtron">
+        
+        <br>Дэлхийн өнцөг булан бүрт эрдмийн шимийг хүртэн суралцаж буй МОНГОЛ оюутан та эх орондоо эргэж ирэн ажиллахыг хүсч байна уу?
+        <br>
+    </div>
+    <div id="5" class="text-justify">
+        <br>Суралцаж байх хугацаандаа боломжит ирээдүйн ажлын байрандаа дадлага хийн, өөрийн биеэр ажлын орчноо, зах зээлээ мэдрэхийг хүсч байна уу?
+        <p>Танд Монгол дахь ажлын байр, дадлага хийх боломжийн талаар илүү их мэдээлэл хэрэгтэй байна уу?</p>
+        	<h3 class="text-center">Тийм бол АНГИР танд туслах болно.</h3>
+
+        <br>
+        <br>
+    </div>
+
+    <div id="6">
+        TExt
+    </div>
+</div>lkjlj
