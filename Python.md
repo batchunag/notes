@@ -63,6 +63,9 @@ print "".join(nums)
 Q & A
 ----
 
+#String formatting
+x = "%03d %03d" % (1,10)
+
 
 
 Not answered

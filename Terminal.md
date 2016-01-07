@@ -51,3 +51,15 @@ ifconfig bridge0 up addm en0 addm en1
 
 #Building bridge
  Try configuring ip manually
+
+#rename files #regexp
+`for f in *old_part*; do mv $f ${f/old_part/new_part}; done`
+
+#script language
+month=$(date +%m)
+year=$(date +%Y)
+
+line1="cd ~/"
+line2="python a.py $month > ~/out.txt"
+line3="python b.py > ~/out_$year$month.txt"
+echo -e "$line1\n$line2\n$line3" > out.sh
