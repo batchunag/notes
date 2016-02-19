@@ -6,3 +6,6 @@ http://www.programcreek.com/2013/03/hashmap-vs-treemap-vs-hashtable-vs-linkedhas
 
 HashMap methods
 http://www.programcreek.com/2013/04/frequently-used-methods-of-java-hashmap/
+
+#String formatting
+sb.append(String.format("%.3f\n",ans));
