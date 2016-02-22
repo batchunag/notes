@@ -6,7 +6,9 @@ Read: http://marcobonzanini.com/2015/02/02/how-to-query-elasticsearch-with-pytho
 Done: Installed ipython, jupyter-notebook
 http://blog.tryolabs.com/2015/02/17/python-elasticsearch-first-steps/
 
-
+#Jupyter notebook
+To run:
+jupyter notebook --NotebookApp.port=8754
 
 #RESTful API: 
 from elasticsearch import Elasticsearch
@@ -60,6 +62,8 @@ nums = [str(n) for n in range(20)]
 print "".join(nums)
 ```
 
+Remember to convert each element of the array to string before join.
+
 Q & A
 ----
 
@@ -112,3 +116,14 @@ foobar = '%s%s' % (foo, bar) # It is OK
 foobar = '{0}{1}'.format(foo, bar) # It is better
 foobar = '{foo}{bar}'.format(foo=foo, bar=bar) # It is best
 ```
+
+#Read from file
+fo = open("foo.txt", "wb")
+print "Name of the file: ", fo.name
+print "Closed or not : ", fo.closed
+
+#DateTime
+from datetime import date
+today = date.today()
+ymonth = str(today.year) + str("%02d" % today.month)
+"From {fromDate}".format(fromDate =str(today))
