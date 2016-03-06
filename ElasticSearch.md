@@ -35,3 +35,6 @@ http://elasticsearch-cheatsheet.jolicode.com/#goto_title_3
     {
        "script" : "ctx._source.views+=1"
     }
+
+#Aggregation
+search_type = "count" is faster because we skip the fetching phase

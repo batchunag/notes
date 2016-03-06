@@ -6,8 +6,11 @@ Set 3600 or 7200
 #Git see what changed
 http://stackoverflow.com/questions/8522619/how-do-i-get-the-list-of-files-about-to-be-updated-by-git-pull-without-knowing
 
-#Multiple user on a computer
+#Multiple users on a computer
 https://help.github.com/articles/generating-ssh-keys/#step-4-add-your-ssh-key-to-your-account
+
+#Multiple users on SourceTree
+⌘N -> Settings -->Add & Remove accounts
 
 
 #Gitignore
@@ -39,3 +42,24 @@ http://stackoverflow.com/questions/61212/how-do-i-remove-local-untracked-files-f
 
 `git clean -f -n` (-fd directories)  
 `git clean -f` (-fd directories)  
+
+#Checkout remote branch
+`git fetch origin`
+`git checkout -b test origin/test`
+
+#Stash
+git stash
+sit stash list
+git stash apply stash@{2}
+
+#git show
+git show object
+git show $REV:$FILE
+git show somebranch:from/the/root/myfile.txt
+git show HEAD^^^:test/test.py
+The command takes the usual style of revision, meaning you can use any of the following:
+
+branch name (as suggested by ash)
+HEAD + x number of ^ characters
+The SHA1 hash of a given revision
+The first few (maybe 5) characters of a given SHA1 hash

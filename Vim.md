@@ -46,3 +46,16 @@ Autocompletion
 ----
 YouCompleteMe
 downloaded to bundle folder but couldn't install
+
+#Help FILE
+https://www.cs.swarthmore.edu/help/vim/reformatting.html
+
+14== auto indent
+
+#Find and replace
+:[range]s/foo/bar/g
+:33,35s/^..//g => removes first 2 character of line from 33 to 35
+:%s/foo/bar/g => throughout the file
+:.,+3s/foo/bar/g => 3lines from current line
+^ : line start
+

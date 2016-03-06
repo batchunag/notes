@@ -23,16 +23,29 @@ Install iTerm
 Install Zsh
 	See INSTALL file
 
-`ps ax`
+`ps axu`
 ---
 [Manual](http://linux.die.net/man/1/ps)
 [Process codes](http://serverfault.com/questions/319684/what-s-s1-t-r-mean-in-ps-ax-ps-list)
+One cannot take control of orphaned process started in different shell.
+Use `screen`.
+
+
+#screen
+
+screen -ls : see the list
+screen -r #process_number  : return to process
+screen -r #process_name    : return to process
+screen -S newone   :  create and attach to new screen named newone
+
+ctrl + A + D : detach from screen
+
 
 `crontab`
 ---
- Crontab: 
- http://www.adminschoice.com/crontab-quick-reference
-
+http://www.adminschoice.com/crontab-quick-reference
+crontab -e
+crontab -l
 
 `copy`
 ---
@@ -57,11 +70,11 @@ ifconfig bridge0 up addm en0 addm en1
 #rename files #regexp
 `for f in *old_part*; do mv $f ${f/old_part/new_part}; done`
 
-#script language
-month=$(date +%m)
-year=$(date +%Y)
+#find text in file
+grep -R **in.txt .
 
-line1="cd ~/"
-line2="python a.py $month > ~/out.txt"
-line3="python b.py > ~/out_$year$month.txt"
-echo -e "$line1\n$line2\n$line3" > out.sh
+#look for files
+find / -type f -name "*.conf"
+
+#See file and directory size
+du -sh /*

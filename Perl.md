@@ -24,3 +24,20 @@ my ($day, $month, $year) = (localtime)[3,4,5];
 $year+=1900;
 $month+=1;
 ```
+
+Time now
+my $dt = DateTime->now(time_zone=>'local');
+$dt->subtract(days => 14);
+
+#copy array
+my @ar1 = (10,10,10);
+@a=[@ar1];
+
+#database
+my $data = $db->execute_decoded($sql);
+-->> $data is number of rows
+foreach my $d (@{$data}) {
+ print $d->[0];
+}
+
+
