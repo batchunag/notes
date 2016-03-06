@@ -112,3 +112,36 @@ foobar = '%s%s' % (foo, bar) # It is OK
 foobar = '{0}{1}'.format(foo, bar) # It is better
 foobar = '{foo}{bar}'.format(foo=foo, bar=bar) # It is best
 ```
+
+#int to binary
+"{0:b}".format(10)
+bin(6)[2:]
+
+#operators
+a = [1,9,12]
+print sum(a)
+sublist = a[:2]
+
+reduce(lambda x, y: x+y, [1, 2, 3, 4, 5])
+
+#REGEX
+```python
+re.sub("\d","#",str) #replaces every digit by #
+```
+
+#sort
+>>> a = 'ZENOVW'
+>>> ''.join(sorted(a))
+'ENOVWZ'
+
+# short if
+return ["No","Yes"][c(n,m)]
+
+#Set union and intersection
+You can use | for set union and & for set intersection.
+
+#Make string mutable (convert into array)
+t = [c for c in s]
+
+#Sort string
+y = sorted(x)
