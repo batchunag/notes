@@ -43,9 +43,9 @@ ctrl + A + D : detach from screen
 
 `crontab`
 ---
- Crontab:
- crontab -e
- crontab -l
+http://www.adminschoice.com/crontab-quick-reference
+crontab -e
+crontab -l
 
 > One should escape % with \ when running crontab.
 
