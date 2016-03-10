@@ -100,3 +100,13 @@ foreach ($nodes as $node)
 http://stackoverflow.com/questions/12411481/php-download-script-creates-unreadable-zip-file-on-mac
 #multiple csv
 http://stackoverflow.com/questions/27707620/php-create-multiple-csv-files-in-memory-then-compress
+
+
+
+
+Pure PHP
+----------
+
+#Big O for PHP functions
+http://stackoverflow.com/questions/2473989/list-of-big-o-for-php-functions
+

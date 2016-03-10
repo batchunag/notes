@@ -47,6 +47,17 @@ ctrl + A + D : detach from screen
  crontab -e
  crontab -l
 
+> One should escape % with \ when running crontab.
+
+#date
+shell-ээс, ялангуяа crontab.аас date хувьсагч ашиглаж байгаа бол ENV.оосоо хамаарч хэл өөр байх магадлалтай тул доорхи шиг тухай бүрд зааж өгөх.
+LANG=en_US.UTF-8 date
+
+Эсвэл бүр системийн тохиргоогоо Англи болгож болно.  
+env LC_ALL=c date
+
+* Гэхдээ энэ тохиолдолд хамаагүй.
+$(date +\%Y-\%m-\%d)
 
 `copy`
 ---
@@ -72,7 +83,8 @@ ifconfig bridge0 up addm en0 addm en1
 `for f in *old_part*; do mv $f ${f/old_part/new_part}; done`
 
 #find text in file
-grep -R **in.txt .
+grep -R "*in" ./dir/
+grep '^\.Pp' myfile
 
 #look for files
 find / -type f -name "*.conf"

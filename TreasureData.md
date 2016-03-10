@@ -25,3 +25,6 @@ OR set column type string to import all.
 
 #Bulk import
 https://docs.treasuredata.com/articles/bulk-import-internal
+
+#column names
+Schemas currently support column names consisting of lowercase alphabets, numbers, and "_" only.
