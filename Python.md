@@ -161,3 +161,10 @@ today = date.today()
 ymonth = str(today.year) + str("%02d" % today.month)
 "From {fromDate}".format(fromDate =str(today))
 
+#eval
+ThreeInOne = lambda a, o, s: eval("sum(a)/len(a)%ss"%o)
+
+#short
+
+Zeros =f= lambda n:n and n/5+f(n/5)
+

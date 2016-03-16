@@ -59,3 +59,7 @@ https://www.cs.swarthmore.edu/help/vim/reformatting.html
 :.,+3s/foo/bar/g => 3lines from current line
 ^ : line start
 
+#Number of pattern matches
+:%s/pattern//gn
+
+

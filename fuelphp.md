@@ -110,3 +110,9 @@ Pure PHP
 #Big O for PHP functions
 http://stackoverflow.com/questions/2473989/list-of-big-o-for-php-functions
 
+#date
+date_default_timezone_set('Asia/Tokyo');
+date("Y-m-d H:i:s");
+
+#split
+explode(" ",$str)

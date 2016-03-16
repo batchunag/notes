@@ -12,6 +12,10 @@ ON DUPLICATE KEY UPDATE
 #UPDATE items in bulk
 You can use code above
 
+#INSERT BULK data from file
+
+$sql = "LOAD DATA LOCAL INFILE 'file.csv' INTO TABLE table FIELDS TERMINATED BY ',' ENCLOSED BY '\"'";
+
 #mysql innodb table size, memory
 
 https://www.pythian.com/blog/difference-between-innodb_data_file_path-and-innodb_file_per_table/

@@ -22,6 +22,7 @@ OR set column type string to import all.
 
 #default --time-column
 --time-value epoch_time[,10]
+make empty for default value(time now)
 
 #Bulk import
 https://docs.treasuredata.com/articles/bulk-import-internal
