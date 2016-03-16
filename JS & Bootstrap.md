@@ -74,7 +74,6 @@ http://stackoverflow.com/questions/10619445/the-prefered-way-of-creating-a-new-e
 $div = $("<div>", {class: "col-xs-6"})
         .html($("<img>", {class: "img-responsive", src:"static/img/dad.png", style: "width: 100%;"}));
 ```
-
 #async function
 
 ```javascript
@@ -112,3 +111,20 @@ function superPower(a, b) {
 ```
 
 
+#Debug
+debugger;
+
+#Array append
+var arr1 = [0, 1, 2];
+var arr2 = [3, 4, 5];
+// Append all items from arr2 onto arr1
+Array.prototype.push.apply(arr1, arr2);
+or arr1.concat(arr2);
+
+
+#Class intersection: just write the selectors together without spaces in between.
+
+$('.a.b')
+So for an element that has an ID of a with classes b and c, you would write:
+
+$('#a.b.c')

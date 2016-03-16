@@ -1,12 +1,12 @@
 #INSERT BULK ITEMS in one row
-INSERT INTO beautiful (name, age) VALUES
-    ('Helen', 24),
-    ('Katrina', 21),
-    ('Samia', 22),
-    ('Hui Ling', 25),
-    ('Yumie', 29)
-ON DUPLICATE KEY UPDATE
-    age = VALUES(age)
+INSERT INTO beautiful (name, age) VALUES  
+    ('Helen', 24),  
+    ('Katrina', 21),  
+    ('Samia', 22),  
+    ('Hui Ling', 25),  
+    ('Yumie', 29)  
+ON DUPLICATE KEY UPDATE  
+    age = VALUES(age)  
 
 
 #UPDATE items in bulk
@@ -26,7 +26,12 @@ Generally, use `innodb_file_per_table ` as it creates file for each table.
 
 > Date type and DateTime type are different
 
-#get column names
-select Column_name 
+#get column names, types
+select Column_name, Column_type 
 from Information_schema.columns 
 where Table_name like 'table name'
+ and TABLE_SCHEMA like "db name"
+
+#COPY table in same server
+INSERT INTO db1.table1 
+SELECT * FROM db2.table2

@@ -29,3 +29,8 @@
     </Directory>
 
 </VirtualHost>
+
+
+#Apache body size limit, query size
+
+https://httpd.apache.org/docs/2.2/ja/mod/core.html#limitrequestbody
