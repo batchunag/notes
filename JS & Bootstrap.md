@@ -74,3 +74,41 @@ http://stackoverflow.com/questions/10619445/the-prefered-way-of-creating-a-new-e
 $div = $("<div>", {class: "col-xs-6"})
         .html($("<img>", {class: "img-responsive", src:"static/img/dad.png", style: "width: 100%;"}));
 ```
+
+#async function
+
+```javascript
+function superPower(a, b) {
+    var m = Math.pow(10,8);
+    
+    function p(w,n,call){
+        if (n==0) {
+            //call();
+            return 1;
+        }
+        var x = p(w,Math.floor(n/2), call);
+//        console.log(w + " ^ " + Math.floor(n/2) + " = "+ x);
+        var r = Math.floor(Math.sqrt(x));
+        var t = x -r*r;
+        var x = ((x*r%m)*r%m+x*t)%m;
+        if (n%2==1)
+            x = x*w%m;
+        return x;
+    }
+    
+    var q = {};
+    var z = 1;
+    var c = 0;
+    while(c<b){
+        //console.log(z);
+        var zz = z;
+        if (!(z in q))
+            q[zz] = p(a,z, function(){exit();});
+        z = q[zz];
+        c+=1;
+    }
+    return z;
+}
+```
+
+

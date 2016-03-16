@@ -161,3 +161,6 @@ today = date.today()
 ymonth = str(today.year) + str("%02d" % today.month)
 "From {fromDate}".format(fromDate =str(today))
 
+#global variable
+if defined in a function make it global even it is a parent function.
+
