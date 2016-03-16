@@ -165,6 +165,8 @@ ymonth = str(today.year) + str("%02d" % today.month)
 ThreeInOne = lambda a, o, s: eval("sum(a)/len(a)%ss"%o)
 
 #short
-
 Zeros =f= lambda n:n and n/5+f(n/5)
+
+#global variable
+if defined in a function make it global even it is a parent function.
 
