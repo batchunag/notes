@@ -155,6 +155,10 @@ fo = open("foo.txt", "wb")
 print "Name of the file: ", fo.name
 print "Closed or not : ", fo.closed
 
+with open(fname) as f:
+    next(f)
+    for line in f:
+
 #DateTime
 from datetime import date
 today = date.today()

@@ -60,6 +60,22 @@ https://www.cs.swarthmore.edu/help/vim/reformatting.html
 ^ : line start
 
 #Number of pattern matches
-:%s/pattern//gn
+`:%s/pattern//gn`
+
+#increase yank limit
+`:set viminfo?`
+`:set viminfo='100,<100,s20,h`
+
+	'100 Marks will be remembered for the last 100 edited files.
+	<100 Limits the number of lines saved for each register to 100 lines; if a register contains more than 100 lines, only the first 100 lines are saved.
+	s20 Limits the maximum size of each item to 20 kilobytes; if a register contains more than 20 kilobytes, the register is not saved.
+	h Disables search highlighting when Vim starts.
+
+#UTF Encoding, display unicode
+Edit or touch ~/.vimrc
+`set encoding=utf-8`
+
+#Show line #
+`:set number`
 
 

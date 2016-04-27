@@ -101,6 +101,8 @@ http://stackoverflow.com/questions/12411481/php-download-script-creates-unreadab
 #multiple csv
 http://stackoverflow.com/questions/27707620/php-create-multiple-csv-files-in-memory-then-compress
 
+#views
+http://fuelphp.com/docs/general/views.html
 
 
 
@@ -116,3 +118,4 @@ date("Y-m-d H:i:s");
 
 #split
 explode(" ",$str)
+
