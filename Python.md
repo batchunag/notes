@@ -170,3 +170,10 @@ Zeros =f= lambda n:n and n/5+f(n/5)
 #global variable
 if defined in a function make it global even it is a parent function.
 
+#Redefining funtion
+def Blindfolded(s, n, i=0):
+    if n <= s:
+        return [0, n - 1]
+    b = Blindfolded(s - i/2, n - s + 1, i%2 + 1)
+    return [b[1], s - b[0] - 1]
+
