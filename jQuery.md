@@ -11,3 +11,17 @@ http://stackoverflow.com/questions/14220321/how-to-return-the-response-from-an-a
 
 #Select ID with semicolon
 $('#test\\:abc')
+
+#Creating jQuery object
+
+
+```javascript
+var div = $("<div></div>");
+$("#box").append(div);
+
+$("#box").append("<div></div>");
+
+var $div = $("<div>", {id: "foo", class: "a"});
+$div.click(function(){ /* ... */ });
+$("#box").append($div);
+```

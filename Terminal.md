@@ -91,3 +91,11 @@ find / -type f -name "*.conf"
 
 #See file and directory size
 du -sh /*
+
+#See disk free space
+df -h
+
+#View multicore CPU load balance using top command
+Press 1(Breakdown of cpu) or I(toggle Iris mode)
+
+#download htop

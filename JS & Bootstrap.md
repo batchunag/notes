@@ -128,3 +128,8 @@ $('.a.b')
 So for an element that has an ID of a with classes b and c, you would write:
 
 $('#a.b.c')
+
+#date formatting double digit
+
+("0" + this.getDate()).slice(-2)
+("0" + (this.getMonth() + 1)).slice(-2)
