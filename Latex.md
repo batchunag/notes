@@ -73,7 +73,7 @@ includehead, includefoot]{geometry}
 #Програмын Listing алга болгох -> Эх код болгож солих
 #OK Table -> Хүснэгт
 ```latex
-% defualt words change
+% default words change
 \renewcommand{\figurename}{Зураг}
 \renewcommand{\tablename}{Хүснэгт}
 \renewcommand\lstlistingname{Код}
@@ -81,3 +81,14 @@ includehead, includefoot]{geometry}
 ```
 
 Making glossary
+
+#Beamer Template | Slide
+http://xaro.hatenablog.jp/entry/2013/09/18/020615
+http://www.opt.mist.i.u-tokyo.ac.jp/~tasuku/beamer.html
+
+#Equation aligned left
+\usepackage[fleqn]{amsmath}
+\begin{flalign}
+& a:=b
+\end{flalign}
+

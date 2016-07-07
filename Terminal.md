@@ -99,3 +99,6 @@ df -h
 Press 1(Breakdown of cpu) or I(toggle Iris mode)
 
 #download htop
+
+#Find files not owned by specific user
+find . \! -user foo -print
