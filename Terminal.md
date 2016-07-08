@@ -1,6 +1,7 @@
 
 #Tree structure
 https://coderwall.com/p/owb6eg/view-folder-tree-in-macosx-terminal
+`alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"`
 
 or download
 http://www.cyberciti.biz/faq/linux-show-directory-structure-command-line/
@@ -27,7 +28,7 @@ Install Zsh
 ---
 [Manual](http://linux.die.net/man/1/ps)
 [Process codes](http://serverfault.com/questions/319684/what-s-s1-t-r-mean-in-ps-ax-ps-list)
-One cannot take control of orphaned process started in different shell.
+> One cannot take control of orphaned process started in different shell.
 Use `screen`.
 
 
@@ -37,9 +38,15 @@ screen -ls : see the list
 screen -r #process_number  : return to process
 screen -r #process_name    : return to process
 screen -S newone   :  create and attach to new screen named newone
+screen -D : power detach screen
 
 ctrl + A + D : detach from screen
 
+#foreground and background
+Ctrl+Z and bg %job_id
+run `jobs` to see jobs
+to bring back `fg %job_id`
+> orphan processes can not be controlled but except being killed.
 
 `crontab`
 ---
@@ -98,4 +105,17 @@ df -h
 #View multicore CPU load balance using top command
 Press 1(Breakdown of cpu) or I(toggle Iris mode)
 
+#See hardware cpu & processor info
+sysctl hw
+
 #download htop
+brew install
+
+#Run processes parallel with bash
+a.sh & b.sh
+
+#Prevent system from sleeping
+http://osxdaily.com/2014/06/16/caffeinate-prevent-sleep-while-command-active-mac-os-x/
+`caffeinate -i [command / process]`
+`caffeinate -d [command / process]`
+Also command alone is useful. `caffeinate `

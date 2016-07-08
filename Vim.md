@@ -75,6 +75,9 @@ https://www.cs.swarthmore.edu/help/vim/reformatting.html
 Edit or touch ~/.vimrc
 `set encoding=utf-8`
 
+#Comment in vimrc
+"This is a comment in vimrc
+
 #Show line #
 `:set number`
 
