@@ -59,3 +59,13 @@ https://alembic.readthedocs.org/en/latest/offline.html#getting-the-start-version
 http://stackoverflow.com/questions/22449884/flask-jquery-autocomplete
 http://stackoverflow.com/questions/17365821/using-jquery-autocomplete-with-flask
 http://stackoverflow.com/questions/15310644/flask-ajax-autocomplete?z_ad8eb2b0f40c11e0be500800200c9a66=1429973160
+
+
+#Run pip for different version of python
+python2.6 /usr/bin/pip
+python2.6 /usr/bin/pip
+
+#Working fabric & paramiko 
+uninstall fabric paramiko
+install paramiko==1.10
+install fabric==1.8.1

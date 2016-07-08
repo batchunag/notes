@@ -47,6 +47,12 @@ http://stackoverflow.com/questions/61212/how-do-i-remove-local-untracked-files-f
 `git fetch origin`
 `git checkout -b test origin/test`
 
+#Clean
+`git clean -df`
+`git checkout -- .`
+git clean removes all untracked files and git checkout clears all unstaged changes.
+
+
 #Stash
 git stash
 sit stash list

@@ -119,3 +119,6 @@ http://osxdaily.com/2014/06/16/caffeinate-prevent-sleep-while-command-active-mac
 `caffeinate -i [command / process]`
 `caffeinate -d [command / process]`
 Also command alone is useful. `caffeinate `
+
+#Find files not owned by specific user
+find . \! -user foo -print
