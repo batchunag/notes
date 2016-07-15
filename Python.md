@@ -164,6 +164,8 @@ from datetime import date
 today = date.today()
 ymonth = str(today.year) + str("%02d" % today.month)
 "From {fromDate}".format(fromDate =str(today))
+toukago = today + datetime.timedelta(days=10)
+print today.strftime('%Y-%m-%d')
 
 #eval
 ThreeInOne = lambda a, o, s: eval("sum(a)/len(a)%ss"%o)
@@ -174,6 +176,33 @@ Zeros =f= lambda n:n and n/5+f(n/5)
 #global variable
 if defined in a function make it global even it is a parent function.
 
+#Subprocess
+`subprocess.call(args, *, stdin=None, stdout=None, stderr=None, shell=False)`
+we can direct stdout, stderr only to file. So we can not use it in the program. 
+If there is a space in command of args, make `shell=True`. (For Trusted Input)
+
+subprocess.Popen(args, bufsize=0, executable=None, stdin=None, stdout=None, stderr=None, preexec_fn=None, close_fds=False, shell=False, cwd=None, env=None, universal_newlines=False, startupinfo=None, creationflags=0)
+
+We can pipe stdout, stderr into stream.
+
+#try catch any error
+try:
+    something()
+except:
+    fallback()
+
+#Numpy
+Remove None types from numpy array
+a[a != np.array(None)]
+
+
+#Exit program
+import sys
+sys.exit(0)
+
+#unicode, mysql escape
+check file encoding!
+
 #Redefining funtion
 def Blindfolded(s, n, i=0):
     if n <= s:
@@ -183,6 +212,7 @@ def Blindfolded(s, n, i=0):
 
 #Accessing to mysql db
 http://www.tutorialspoint.com/python/python_database_access.html
+
 
 ```python
 #!/usr/bin/python
@@ -213,6 +243,14 @@ try:
              (fname, lname, age, sex, income )
 except:
    print "Error: unable to fecth data"
+
+#cursor execute
+cursor.execute("%s %s" % (a, b))
+cursor.execute("%s %s", [a, b])
+
+cursor.execute("%s", (a,) )
+% , needed if there is only one column
+
 
 # disconnect from server
 db.close()

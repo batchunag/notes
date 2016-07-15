@@ -29,6 +29,10 @@ Time now
 my $dt = DateTime->now(time_zone=>'local');
 $dt->subtract(days => 14);
 
+#strftime for datetime variable
+my $start = DateTime->new(day=>1, month=>6, year=>2016);
+$start->strftime("%Y_%m_%d");
+
 #copy array
 my @ar1 = (10,10,10);
 @a=[@ar1];

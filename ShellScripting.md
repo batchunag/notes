@@ -29,3 +29,6 @@ echo "Nbr of elements:" ${#array[@]}
 
 echo ""
 echo ${array[@]}
+
+#Run processes parallel with bash
+a.sh & b.sh

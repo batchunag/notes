@@ -1,0 +1,25 @@
+#Joining a subquery in ZEND
+[link](http://stackoverflow.com/questions/4715718/how-can-i-join-a-subquery-using-zend-db-select)
+```php
+$user_multivalued = $db->select()
+                      ->from('user_multivalued', array(
+                         'user_id',
+                         'field_id',
+                         new Zend_Db_Expr("GROUP_CONCAT(value SEPARATOR ',') AS value"))),
+                      ->where('field = ?', 25)
+                      ->group('user_id')
+                      ->group('field_id');      
+
+$select = $db->select()
+             ->from('users', array('user_id', 'email_address'))
+             ->joinLeft(array('t1' => $user_multivalued),
+                         't1.user_id = users.user_id',
+                         array('languages'=>'value')
+             )
+             ->where('list_id = ?', 45);
+```
+
+#Getting a SUM in query
+$select = $db->select()
+    ->from('mytable', array('sum1' => 'SUM(`col1`)', 'sum2' => 'SUM(col2)')
+    ->group('year');

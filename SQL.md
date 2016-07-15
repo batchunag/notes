@@ -1,5 +1,6 @@
 #INSERT BULK ITEMS in one row
-INSERT INTO beautiful (name, age) VALUES  
+INSERT INTO beautiful (name, age) 
+VALUES  
     ('Helen', 24),  
     ('Katrina', 21),  
     ('Samia', 22),  
