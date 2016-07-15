@@ -104,8 +104,6 @@ http://stackoverflow.com/questions/27707620/php-create-multiple-csv-files-in-mem
 #views
 http://fuelphp.com/docs/general/views.html
 
-
-
 Pure PHP
 ----------
 
@@ -119,3 +117,16 @@ date("Y-m-d H:i:s");
 #split
 explode(" ",$str)
 
+#Sort array by field
+http://stackoverflow.com/questions/10000005/php-sort-array-by-field
+function cmp($a, $b)
+{
+    return strcmp($a["title"], $b["title"]);
+}
+
+usort($array, "cmp");
+
+#sort associative array by value
+```php
+arsort($array);
+```

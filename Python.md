@@ -244,6 +244,14 @@ try:
 except:
    print "Error: unable to fecth data"
 
+#cursor execute
+cursor.execute("%s %s" % (a, b))
+cursor.execute("%s %s", [a, b])
+
+cursor.execute("%s", (a,) )
+% , needed if there is only one column
+
+
 # disconnect from server
 db.close()
 ```

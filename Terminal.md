@@ -122,3 +122,6 @@ Also command alone is useful. `caffeinate `
 
 #Find files not owned by specific user
 find . \! -user foo -print
+
+#Diff show total number of lines
+diff file1 file2 | grep "^>" | wc -l

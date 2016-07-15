@@ -81,4 +81,9 @@ Edit or touch ~/.vimrc
 #Show line #
 `:set number`
 
+#Copy with mouse
+:set mouse=a
+:se mouse+=a
+
+
 
