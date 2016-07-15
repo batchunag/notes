@@ -102,3 +102,11 @@ Press 1(Breakdown of cpu) or I(toggle Iris mode)
 
 #Find files not owned by specific user
 find . \! -user foo -print
+
+#Appending audio files
+cat * > xxx.mp3
+
+Different way
+cat first_part.mp3 > newfile.mp3
+cat second_part.mp3 >> newfile.mp3
+cat third_part.mp3 >> newfile.mp3

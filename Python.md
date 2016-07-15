@@ -217,3 +217,9 @@ except:
 # disconnect from server
 db.close()
 ```
+
+
+#Related to pip
+`chown -R user:group ~`
+Six is installed to system so we can't uninstall.
+`sudo -H pip install pp --ignore-installed`
