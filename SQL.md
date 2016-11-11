@@ -40,3 +40,27 @@ where Table_name like 'table name'
 #COPY table in same server
 INSERT INTO db1.table1 
 SELECT * FROM db2.table2
+
+#INSERT INTO * SELECT * ON DUPLICATE KEY UPDATE 
+INSERT INTO table (`col1`, `col2`, `col3`)
+SELECT t1.a, t2.b, COUNT(t2.c) as count
+FROM t1
+LEFT JOIN t2
+ON t1.id = t2.id
+WHERE t1.x = 10
+GROUP BY t2.c
+ON DUPLICATE KEY UPDATE `count`=`count` + count;
+
+
+#Update using another table
+update tableA a
+left join tableB b on
+   a.name_a = b.name_b
+set
+   validation_check = if(start_dts > end_dts, 'VALID', '')
+   a = b
+
+ 
+
+
+

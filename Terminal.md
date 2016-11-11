@@ -134,3 +134,41 @@ cat third_part.mp3 >> newfile.mp3
 #Diff show total number of lines
 diff file1 file2 | grep "^>" | wc -l
 
+
+#Unicode
+Change locale (use `locale` to check)
+```export LC_ALL="ja_JP.UTF-8"```
+
+#Make change global
+edit /etc/locale.conf
+
+```
+LC_ALL="ja_JP.UTF-8"
+export LC_ALL
+```
+
+#To keep ssh connection alive for longer period set ~/.ssh/config
+```
+Host *
+  ServerAliveInterval 120
+```
+
+
+#Install different version for python
+[Best one](http://stackoverflow.com/questions/5506110/is-it-possible-to-install-another-version-of-python-to-virtualenv)
+Another  two tutorial.
+[](http://toomuchdata.com/2014/02/16/how-to-install-python-on-centos/)
+[](https://www.digitalocean.com/community/tutorials/how-to-set-up-python-2-7-6-and-3-3-3-on-centos-6-4)
+
+
+#Running python script by apache php with python on virtualenv 
+basically, to run by apache:
+python and virtualenv should be in public directory.
+[Some hints](http://superuser.com/questions/455935/php-script-cant-run-bash-script-sh-permission-denied)
+
+
+#loop through folder
+find . -type d -exec ./RenameImages {} \;
+
+http://stackoverflow.com/questions/24007555/looping-through-folders-and-renaming-all-files-in-each-folder-sequentially-with
+using awk: http://stackoverflow.com/questions/1767384/ls-command-how-can-i-get-a-recursive-full-path-listing-one-line-per-file

@@ -133,3 +133,10 @@ $('#a.b.c')
 
 ("0" + this.getDate()).slice(-2)
 ("0" + (this.getMonth() + 1)).slice(-2)
+
+#Get date today
+var today = new Date().toJSON().slice(0,10);
+
+#Drap&Drop for file upload
+https://www.sitepoint.com/html5-file-drag-and-drop/
+https://jsfiddle.net/oL2akhtz/
