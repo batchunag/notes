@@ -64,6 +64,26 @@ print "".join(nums)
 
 Remember to convert each element of the array to string before join.
 
+#Escape % in print
+s = "%s 55%% %s" %(1,2)
+
+#StringFormatting
+'item{} -> "Step{}"'.format(i, j)
+
+#Download image url
+import os
+import requests
+import shutil
+
+if not os.path.isfile(path):
+        r = requests.get(url, stream=True)
+        if r.status_code == 200:
+            with open(path, 'wb') as f:
+                r.raw.decode_content = True
+                shutil.copyfileobj(r.raw, f)
+
+PS: Path must be absolute
+
 Q & A
 ----
 
@@ -414,3 +434,21 @@ Usage
     print item.keys()
     # (attribute, value)形式タプルのリスト取得
     print item.items()
+
+
+#singularize, pluralize
+from nltk.stem import WordNetLemmatizer
+
+wnl = WordNetLemmatizer()
+
+def isplural(word):
+    lemma = wnl.lemmatize(word, 'n')
+    plural = True if word is not lemma else False
+    return plural, lemma
+
+nounls = ['geese', 'mice', 'bars', 'foos', 'foo', 
+                'families', 'family', 'dog', 'dogs']
+
+for nn in nounls:
+    isp, lemma = isplural(nn)
+    print nn, lemma, isp
