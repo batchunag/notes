@@ -24,6 +24,12 @@ Install iTerm
 Install Zsh
 	See INSTALL file
 
+#Run command as a different user
+su - username -c "command"
+
+#List all user
+cat /etc/passwd
+
 `ps axu`
 ---
 [Manual](http://linux.die.net/man/1/ps)

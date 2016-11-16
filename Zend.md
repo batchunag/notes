@@ -31,3 +31,7 @@ Troubleshooting--> Check logs, check compile errors
 
 #Add another db
 Add to config.ini
+
+#Uncaught exception 'Zend_Session_Exception' with message 'Session must be started before any output has been sent to the browser; output started
+
+-> Check unnecessary empty lines at the head or bottom. (No ?> is necessary)
