@@ -192,6 +192,10 @@ toukago = today + datetime.timedelta(days=10)
 > str to date
     datetime.datetime.strptime('24052010', "%d%m%Y").date()
 
+#Get epoch time directly from date object
+today = datetime.date.today()
+int(time.mktime(today.timetuple()))
+
 #eval
 ThreeInOne = lambda a, o, s: eval("sum(a)/len(a)%ss"%o)
 
