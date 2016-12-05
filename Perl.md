@@ -44,4 +44,10 @@ foreach my $d (@{$data}) {
  print $d->[0];
 }
 
+#readfile
+my $file = "today.txt";
+open(my $fh, '<:encoding(UTF-8)', $file)
+	or die "Could not open file '$file' $!";
+my $row = <$fh>;
+chomp $row;
 

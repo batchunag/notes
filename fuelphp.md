@@ -104,6 +104,25 @@ http://stackoverflow.com/questions/27707620/php-create-multiple-csv-files-in-mem
 #views
 http://fuelphp.com/docs/general/views.html
 
+#installing custom packages
+copy `fuel/core/config/package.php` to `fuel/app/config/package.php`
+and add git path.
+'sources' => array(
+            'fuel-packages',
+            'github.com/batchunag', // 追加
+        ),
+
+If downloading from github, package name must be `fuel-custom_name`
+[Good example](http://blog.omoon.org/20120626/264)
+Added fuel-excel.
+
+#Fuel-excel
+$excel = new PHPExcel();
+or 
+$file = "alpha.xlsx"
+$reader = PHPExcel_IOFactory::createReader('Excel2007');
+$excel = $reader->load($file);
+$arr = $excel->getActiveSheet()->toArray(null,true,true,false);
 Pure PHP
 ----------
 
@@ -130,3 +149,34 @@ usort($array, "cmp");
 ```php
 arsort($array);
 ```
+
+#to escape query for mysql
+$string = $this->db->quote($string);
+
+#query sql
+DB::query($sql)->parameters($params);
+
+#log files
+Log files are located in app/logs/
+
+#see last query
+echo DB::last_query();
+
+#Excel 
+http://www.qript.co.jp/blog/technique/1726/
+https://github.com/muhittin/fuelphp_excel
+http://kimagureneet.hatenablog.com/entry/2014/10/18/175755
+
+#try and catch error
+try {
+	do sth;
+}
+catch (Exception $e){
+	 $err = $e->getMessage();
+}
+
+#File upload
+$path = DOCROOT.'uploads/';
+$file = $path . basename($_FILES['file']['name']);
+move_uploaded_file($_FILES['file']['tmp_name'], $file);
+

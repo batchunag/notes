@@ -151,6 +151,7 @@ reduce(lambda x, y: x+y, [1, 2, 3, 4, 5])
 #REGEX
 ```python
 re.sub("\d","#",str) #replaces every digit by #
+re.sub(r'([^0-9])',"",url) #replace all except digits
 ```
 
 #sort
@@ -174,9 +175,9 @@ y = sorted(x)
 fo = open("foo.txt", "wb")
 print "Name of the file: ", fo.name
 print "Closed or not : ", fo.closed
-
 with open(fname) as f:
     next(f)
+
     for line in f:
 
 #Globally Unique User Identifier GUUID
@@ -185,11 +186,19 @@ Use -> uuid4()
 
 #DateTime
 from datetime import date
+import datetime
 today = date.today()
 ymonth = str(today.year) + str("%02d" % today.month)
 "From {fromDate}".format(fromDate =str(today))
 toukago = today + datetime.timedelta(days=10)
-print today.strftime('%Y-%m-%d')
+> date to str
+    print today.strftime('%Y-%m-%d')
+> str to date
+    datetime.datetime.strptime('24052010', "%d%m%Y").date()
+
+#Get epoch time directly from date object
+today = datetime.date.today()
+int(time.mktime(today.timetuple()))
 
 #eval
 ThreeInOne = lambda a, o, s: eval("sum(a)/len(a)%ss"%o)
@@ -227,6 +236,10 @@ sys.exit(0)
 #unicode, mysql escape
 check file encoding!
 
+#escape %
+%%
+
+
 #Redefining funtion
 def Blindfolded(s, n, i=0):
     if n <= s:
@@ -237,18 +250,14 @@ def Blindfolded(s, n, i=0):
 #Accessing to mysql db
 http://www.tutorialspoint.com/python/python_database_access.html
 
-
+> 
 ```python
 #!/usr/bin/python
-
 import MySQLdb
-
 # Open database connection
 db = MySQLdb.connect("localhost","testuser","test123","TESTDB" )
-
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
-
 # Prepare SQL query to INSERT a record into the database.
 sql = "SELECT * FROM EMPLOYEE WHERE INCOME > '%d'" % (1000)
 try:
@@ -267,15 +276,11 @@ try:
              (fname, lname, age, sex, income )
 except:
    print "Error: unable to fecth data"
-
 #cursor execute
 cursor.execute("%s %s" % (a, b))
 cursor.execute("%s %s", [a, b])
-
 cursor.execute("%s", (a,) )
 % , needed if there is only one column
-
-
 # disconnect from server
 db.close()
 ```
@@ -285,6 +290,159 @@ db.close()
 `chown -R user:group ~`
 Six is installed to system so we can't uninstall.
 `sudo -H pip install pp --ignore-installed`
+
+#cursor last query executed
+cursor._last_executed
+
+#Install different version for python
+Most of the error is due to permission related to sudo
+It's better and easier to use virtualenv.
+Basically we install python with different version in local folder. And we install pip and virtualenv to our new python.
+Finally, we create virtualenv for our version of python.
+[Here](http://stackoverflow.com/questions/5506110/is-it-possible-to-install-another-version-of-python-to-virtualenv)
+
+PS: Be careful with version numbers when downloading tar source file.
+```
+For Python 2.7.1
+1) Get Python source
+mkdir ~/src
+mkdir ~/.localpython
+cd ~/src
+wget http://www.python.org/ftp/python/2.7.1/Python-2.7.1.tgz
+tar -zxvf Python-2.7.1.tgz
+cd Python-2.7.1
+
+make clean
+./configure --prefix=/home/${USER}/.localpython
+make
+make install
+2) Install virtualenv
+virtualenv source
+
+cd ~/src
+wget http://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.5.2.tar.gz#md5=fbcefbd8520bb64bc24a560c6019a73c
+tar -zxvf virtualenv-1.5.2.tar.gz
+cd virtualenv-1.5.2/
+~/.localpython/bin/python setup.py install
+3) Create a virtualenv using your local python
+virtualenv docs
+
+mkdir /home/${USER}/virtualenvs
+cd /home/${USER}/virtualenvs
+~/.localpython/bin/virtualenv py2.7 --python=/home/${USER}/.localpython/bin/python2.7
+4) Activate the environment
+
+cd ~/virtualenvs/py2.7/bin
+source ./activate
+5) Check
+
+(py2.7)$ python
+Python 2.7.1 (r271:86832, Mar 31 2011, 15:31:37) 
+[GCC 4.4.5] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+
+(py2.7)$ deactivate
+$ python
+Python 2.6.6 (r266:84292, Sep 15 2010, 15:52:39) 
+[GCC 4.4.5] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+ 
+```
+
+#Read excel & INSERT MANY
+df =pd.read_excel('file.xlsx', header=1)
+values = df.values
+columns = df.columns
+qlist = []
+for row in values:
+  rlist = []
+  rlist.append(('id', row[0]))
+  rlist.append(('name', row[4]))
+  d = dict(rlist)
+  qlist.append(d)
+query="""
+ INSERT INTO table (id, name)
+ VALUES (%(id)s, %(name)s)
+"""
+cursor.executemany(query, qlist)
+
+
+#MYSQLDB
+pip install mysqldb
+`No matching distribution found for MySQLdb`
+--> pip install MySQL-python
+`EnvironmentError: mysql_config not found`
+-->export PATH=$PATH:/usr/local/mysql/bin
+-->export PATH=$PATH:/Applications/MAMP/Library/bin (for MAMP)
+
+#Beautiful soup
+> 
+Install
+    pip install beautifulsoup4
+import
+    from bs4 import BeautifulSoup
+Usage
+    html = urllib2.urlopen("http://example.com")
+    soup = BeautifulSoup(html)
+  OR 
+    html = """
+    <html>
+    ...
+    </html>
+    """
+
+    src = soup.p.img['src']
+    all_a = soup.find_all("a")
+  Attrib
+    soup.a.get("href")
+    soup.find_all(class_="link", href="/link")
+    soup.find_all(attrs={"class": "link", "href": "/link"})
+
+    import re
+    soup.find_all(re.compile("^b"))
+
+[Documentation](https://www.crummy.com/software/BeautifulSoup/bs3/documentation.html#The%20attributes%20of%20Tags)
+[Good link](http://qiita.com/itkr/items/513318a9b5b92bd56185)
+
+#XMLparse
+[Qiita](http://hikm.hatenablog.com/entry/20090206/1233950923)
+[Tutorial](http://lxml.de/tutorial.html)
+> Install
+  Built-in
+import
+  import xml.etree.cElementTree as ET
+Usage
+    tree = ET.ElementTree(file=urllib2.urlopen('https://doda.jp/careercompass/feed'))
+    root = tree.getroot()  
+  OR
+    xmlString = '<window width="1920"><title font="large" color="red">sample</title><buttonbox><button>OK</button><button>Cancel</button></buttonbox></window>'
+    root = fromstring(xmlString)
+>
+    root[i]
+    root.get("name")
+    root.tag
+    root.text
+    ET.SubElement(root, "channel")
+
+  items = root.findall("channel/item")
+  for item in items:
+    url = item.find("link").text
+    html = item.find("description")
+    soup = BeautifulSoup(html.text, "html.parser")
+    print soup.p.img['src']
+> 
+    print item.tag
+    # attributeの取得
+    print item.get("width")
+    # デフォルトを指定してattributeを取得
+    print item.get("height", "1200")
+    # attribute名のリスト取得
+    print item.keys()
+    # (attribute, value)形式タプルのリスト取得
+    print item.items()
+
 
 #singularize, pluralize
 from nltk.stem import WordNetLemmatizer
