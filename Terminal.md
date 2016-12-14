@@ -25,7 +25,9 @@ Install Zsh
 	See INSTALL file
 
 #Run command as a different user
-su - username -c "command"
+$ su - username -c "command"
+$ sudo -S -u otheruser whoami
+$ sudo -i -u user whoami
 
 #List all user
 cat /etc/passwd
