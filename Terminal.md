@@ -29,7 +29,9 @@ sudo -i
 su 
 
 #Run command as a different user
-su - username -c "command"
+$ su - username -c "command"
+$ sudo -S -u otheruser whoami
+$ sudo -i -u user whoami
 
 #Run as apache
 su -s "/bin/bash" -c "/virtualenvs/pyweb/bin/python2.7 my_code.py" apache
@@ -146,6 +148,15 @@ Different way
 cat first_part.mp3 > newfile.mp3
 cat second_part.mp3 >> newfile.mp3
 cat third_part.mp3 >> newfile.mp3
+
+#Play audio from terminal
+afplay alpha.mp3
+
+#Convert audio files 
+afconvert pineapple.m4a -o pine.wav -d LEI16@16000
+For help->
+afconvert -hf
+afconvert --help
 
 #Diff show total number of lines
 diff file1 file2 | grep "^>" | wc -l

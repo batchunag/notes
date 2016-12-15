@@ -180,6 +180,10 @@ with open(fname) as f:
 
     for line in f:
 
+#Globally Unique User Identifier GUUID
+import uuid
+Use -> uuid4()    
+
 #DateTime
 from datetime import date
 import datetime

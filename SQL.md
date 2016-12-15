@@ -1,3 +1,6 @@
+#SQL practices
+https://sqlbolt.com/topic/set_operations
+
 #INSERT BULK ITEMS in one row
 INSERT INTO beautiful (name, age) 
 VALUES  
