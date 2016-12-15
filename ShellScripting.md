@@ -13,7 +13,7 @@ p=$(date "--date=$(date) -60 day" +%Y-%m-%d)
 
 yes=$(date -d "4 day ago 13:00 " '+%Y-%m-%d %H:%M:%S')
 
-#execute string in shell
+#execute string in shell 
 eval $cmd
 
 #array

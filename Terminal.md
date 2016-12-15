@@ -24,8 +24,15 @@ Install iTerm
 Install Zsh
 	See INSTALL file
 
+#Switch to root
+sudo -i
+su 
+
 #Run command as a different user
 su - username -c "command"
+
+#Run as apache
+su -s "/bin/bash" -c "/virtualenvs/pyweb/bin/python2.7 my_code.py" apache
 
 #List all user
 cat /etc/passwd
@@ -49,7 +56,7 @@ screen -D : power detach screen
 ctrl + A + D : detach from screen
 
 #foreground and background
-Ctrl+Z and bg %job_id
+Ctrl+Z and bg %job_id	
 run `jobs` to see jobs
 to bring back `fg %job_id`
 > orphan processes can not be controlled but except being killed.
@@ -71,6 +78,9 @@ env LC_ALL=c date
 
 * Гэхдээ энэ тохиолдолд хамаагүй.
 $(date +\%Y-\%m-\%d)
+
+* Date yesterday | last week
+$(date -d "yesterday" '+%Y-%m-%d')
 
 `copy`
 ---

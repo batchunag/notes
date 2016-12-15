@@ -456,3 +456,36 @@ nounls = ['geese', 'mice', 'bars', 'foos', 'foo',
 for nn in nounls:
     isp, lemma = isplural(nn)
     print nn, lemma, isp
+
+#Unicode related
+x = u"名詞"
+print x
+--> always prints BL>;l
+--> Reason : might be sth to do with encoding.
+Try copy the contents to new file
+
+
+#Pand excel float precision
+> !! formatting 2ланд нь бичихгүй бол гарахгүй байв.
+
+xf = pd.DataFrame(values)
+writer=pd.ExcelWriter(path + 'result.xlsx', engine='xlsxwriter')
+xf.to_excel(writer, sheet_name='Sheet1', index=False, header=columns, float_format='%.2f')
+workbook = writer.book
+worksheet = writer.sheets['Sheet1']
+rate=workbook.add_format({'num_format': '0.00 '})
+worksheet.set_column('B:F', None, rate)
+writer.save()
+
+> Simple version (xls)
+    ef=pd.DataFrame(values)
+    ef.to_excel(path + 'result.xlsx', index=False, header=columns, encoding='utf8', float_format='%.3f')
+>Simple version (csv)
+    cf=pd.DataFrame(values)
+    cf.to_csv(path + 'result.csv', index=False, header=columns, encoding='utf8', decimal=',', sep=' ', flo    at_format='{:.2f}')
+
+#igraph
+install port for cairo
+install cairo
+pip install cairocffi
+

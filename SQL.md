@@ -60,7 +60,26 @@ set
    validation_check = if(start_dts > end_dts, 'VALID', '')
    a = b
 
- 
+#Join on LIKE
+SELECT *
+FROM A
+JOIN B
+ON A.id LIKE CONCAT('%%', B.id, '%%') 
+(%% is for php)
 
+#Add constant value to sql result
+Select name, surname from users
+UNION [ALL]
+SELECT 'JASON', 'David'
 
+#Create temporary table
+DROP TABLE temp;
+CREATE TEMPORARY TABLE temp(
+	name varchar(30) NOT NULL
+);
+INSERT INTO temp(name) VALUES('abc'),('xyz');
+
+SELECT * FROM temp
+INNER JOIN words ON 
+temp.name =comp.alpha;
 

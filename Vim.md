@@ -95,4 +95,6 @@ Your cursor should jump forward to the matching closing html/xml tag. To jump ba
 #Go x lines up and down
 10 + (hjkl) or 4 arrows
 
-
+#Paste code with correct indentation
+:set paste
+:set nopaste

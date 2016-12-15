@@ -140,3 +140,7 @@ var today = new Date().toJSON().slice(0,10);
 #Drap&Drop for file upload
 https://www.sitepoint.com/html5-file-drag-and-drop/
 https://jsfiddle.net/oL2akhtz/
+
+#Charting and graph visualization
+http://thenextweb.com/dd/2015/06/12/20-best-javascript-chart-libraries/
+Libraries like FusionCharts, GoogleCharts, Dygraphs or one of the D3 derivatives may work best for corporations with large data sets, or small businesses that rely heavily on data analysis. If you just need something small and quick, Morris.js or Chart.js might work better for you. For graphs and networks, Cytoscape or Sigma.js is probably the way to go.

@@ -19,3 +19,12 @@ usort($your_data, function($a, $b)
 {
     return strcmp($a->name, $b->name);
 });
+
+#Array intersection
+$intersection = array_intersection($a, $b);
+#Array union
+$union = array_unique(array_merge($a, $b));
+
+#Get random number
+below is better than rand();
+mt_rand() / mt_getrandmax();
