@@ -294,6 +294,15 @@ Six is installed to system so we can't uninstall.
 #cursor last query executed
 cursor._last_executed
 
+#Work on virtual environment
+First, install virtualenvwrapper by pip.
+[Useful link](https://www.sitepoint.com/virtual-environments-python-made-easy/)
+virtualenvwrapper | to see help message
+mkvirtualenv new-env
+workon my-env
+deactivate
+rmvirtualenv old-env
+
 #Install different version for python
 Most of the error is due to permission related to sudo
 It's better and easier to use virtualenv.
