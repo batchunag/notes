@@ -7,6 +7,8 @@ Done: Installed ipython, jupyter-notebook
 http://blog.tryolabs.com/2015/02/17/python-elasticsearch-first-steps/
 
 #Jupyter notebook
+To install:
+pip3 install jupyter
 To run:
 jupyter notebook --NotebookApp.port=8754
 
@@ -497,8 +499,27 @@ writer.save()
     cf=pd.DataFrame(values)
     cf.to_csv(path + 'result.csv', index=False, header=columns, encoding='utf8', decimal=',', sep=' ', flo    at_format='{:.2f}')
 
-#igraph
+#igraph Macport
 install port for cairo
 install cairo
 pip install cairocffi
+
+#igraph brew
+Go to homebrew: brew.sh, and install brew for Mac. Then,
+
+brew install cairo
+brew install py2cairo
+brew install igraph — install C-core
+sudo pip install python-igraph —install igraph for python
++ pip install cairocffi
+
+
+export PYTHONPATH=/Users/me/.virtualenvs/my-env/bin/python$PYTHONPATH
+したら出た！
+→brewのpy2cairo（かigraph）は自分のpythonに対してやっていたと思われる
+
+
+
+
+
 
