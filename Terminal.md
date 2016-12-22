@@ -71,6 +71,8 @@ crontab -l
 
 > One should escape % with \ when running crontab.
 
+see log from /var/log/cron
+
 #date
 shell-ээс, ялангуяа crontab.аас date хувьсагч ашиглаж байгаа бол ENV.оосоо хамаарч хэл өөр байх магадлалтай тул доорхи шиг тухай бүрд зааж өгөх.
 LANG=en_US.UTF-8 date
