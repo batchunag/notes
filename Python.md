@@ -358,8 +358,6 @@ $ python
 Python 2.6.6 (r266:84292, Sep 15 2010, 15:52:39) 
 [GCC 4.4.5] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
->>>
- 
 ```
 
 #Read excel & INSERT MANY
