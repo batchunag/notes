@@ -86,6 +86,10 @@ $(date +\%Y-\%m-\%d)
 * Date yesterday | last week
 $(date -d "yesterday" '+%Y-%m-%d')
 
+*osx get only hour*
+date +%H
+[more](http://www.mactricksandtips.com/2010/01/working-with-the-date-function-in-terminal.html)
+
 `copy`
 ---
 cp -pRv source dest
@@ -201,3 +205,8 @@ find . -type d -exec ./RenameImages {} \;
 
 http://stackoverflow.com/questions/24007555/looping-through-folders-and-renaming-all-files-in-each-folder-sequentially-with
 using awk: http://stackoverflow.com/questions/1767384/ls-command-how-can-i-get-a-recursive-full-path-listing-one-line-per-file
+
+#stdin & stdout
+concat strings and stdin & stdout
+echo "input" | awk '{print $1"string"}'
+date +%H | awk '{print "お疲れ様です。"$1"時になりました。"}' | say -v kyoko
