@@ -28,3 +28,7 @@ $union = array_unique(array_merge($a, $b));
 #Get random number
 below is better than rand();
 mt_rand() / mt_getrandmax();
+
+#install on nginx
+http://todsul.com/tech/install-and-configure-php-fpm-on-nginx/
+http://qiita.com/tukiyo3/items/b1d29a257c41d97d6107

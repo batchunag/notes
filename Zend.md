@@ -19,6 +19,19 @@ $select = $db->select()
              ->where('list_id = ?', 45);
 ```
 
+#Adapter example
+```php
+$select = $this->_name->select()->setIntegrityCheck(false);
+$select->from('table', array('col1','col2',))
+->where('kw1 = ?', $kw)
+->where('time > -8')
+->where('time < 7')
+->order(array('time ASC', 'count DESC'));
+$row = $this->_d_dmp_ctg_master->fetchAll($select);
+```
+
+
+
 #Getting a SUM in query
 $select = $db->select()
     ->from('mytable', array('sum1' => 'SUM(`col1`)', 'sum2' => 'SUM(col2)')
@@ -35,3 +48,4 @@ Add to config.ini
 #Uncaught exception 'Zend_Session_Exception' with message 'Session must be started before any output has been sent to the browser; output started
 
 -> Check unnecessary empty lines at the head or bottom. (No ?> is necessary)
+
