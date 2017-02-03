@@ -98,6 +98,11 @@ date -j -f "%a %b %d %T %Z %Y" "`date`" "+%s"
 Get epoch from specific time
 date -j -f date -j -f "%Y/%m/%d %T" "2009/10/15 04:58:06" +"%s"
 
+*osx get only hour*
+date +%H
+[more](http://www.mactricksandtips.com/2010/01/working-with-the-date-function-in-terminal.html)
+
+
 `copy`
 ---
 cp -pRv source dest
@@ -221,3 +226,9 @@ using awk: http://stackoverflow.com/questions/1767384/ls-command-how-can-i-get-a
 
 #Mecab install
 http://estrellita.hatenablog.com/entry/2014/02/28/051150
+
+#stdin & stdout
+concat strings and stdin & stdout
+echo "input" | awk '{print $1"string"}'
+date +%H | awk '{print "お疲れ様です。"$1"時になりました。"}' | say -v kyoko
+
