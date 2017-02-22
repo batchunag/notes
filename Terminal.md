@@ -86,9 +86,22 @@ $(date +\%Y-\%m-\%d)
 * Date yesterday | last week
 $(date -d "yesterday" '+%Y-%m-%d')
 
+#epoch
+Convert epoch time
+date -j -r 1483578560
+date -r 1483578560 '+%m/%d/%Y %H:%M:%S'
+
+Get current epoch time
+date +%s
+date -j -f "%a %b %d %T %Z %Y" "`date`" "+%s"
+
+Get epoch from specific time
+date -j -f date -j -f "%Y/%m/%d %T" "2009/10/15 04:58:06" +"%s"
+
 *osx get only hour*
 date +%H
 [more](http://www.mactricksandtips.com/2010/01/working-with-the-date-function-in-terminal.html)
+
 
 `copy`
 ---
@@ -172,13 +185,18 @@ diff file1 file2 | grep "^>" | wc -l
 Change locale (use `locale` to check)
 ```export LC_ALL="ja_JP.UTF-8"```
 
+#change for every user
+vim ~/.bash_profile
+
 #Make change global
 edit /etc/locale.conf
+PS: directory changes depending on OS
 
 ```
 LC_ALL="ja_JP.UTF-8"
 export LC_ALL
 ```
+
 
 #To keep ssh connection alive for longer period set ~/.ssh/config
 ```
@@ -206,7 +224,11 @@ find . -type d -exec ./RenameImages {} \;
 http://stackoverflow.com/questions/24007555/looping-through-folders-and-renaming-all-files-in-each-folder-sequentially-with
 using awk: http://stackoverflow.com/questions/1767384/ls-command-how-can-i-get-a-recursive-full-path-listing-one-line-per-file
 
+#Mecab install
+http://estrellita.hatenablog.com/entry/2014/02/28/051150
+
 #stdin & stdout
 concat strings and stdin & stdout
 echo "input" | awk '{print $1"string"}'
 date +%H | awk '{print "お疲れ様です。"$1"時になりました。"}' | say -v kyoko
+

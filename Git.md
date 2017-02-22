@@ -17,11 +17,17 @@ https://help.github.com/articles/generating-ssh-keys/#step-4-add-your-ssh-key-to
 http://stackoverflow.com/questions/1139762/ignore-files-that-have-already-been-committed-to-a-git-repository
 
 ```sh
+*it is safer*
+git rm --cached filename 
+
+**First commit any outstanding code changes**
 git rm -r --cached .
 git add .
 git commit -m "fixing .gitignore"
 ```
 
+#Git pull error
+ git remote set-url origin https://username@github.com/username/rss.git
 
 
 ##Reset Files
@@ -69,3 +75,11 @@ branch name (as suggested by ash)
 HEAD + x number of ^ characters
 The SHA1 hash of a given revision
 The first few (maybe 5) characters of a given SHA1 hash
+
+#git diff
+diff two branch
+git diff --name-status branch1 branch2
+git diff mybranch master -- myfile.cs
+
+#git copy from other branch
+git checkout otherbranch myfile.txt
