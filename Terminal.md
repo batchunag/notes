@@ -63,6 +63,8 @@ run `jobs` to see jobs
 to bring back `fg %job_id`
 > orphan processes can not be controlled but except being killed.
 
+kill -9 PID
+
 `crontab`
 ---
 http://www.adminschoice.com/crontab-quick-reference
