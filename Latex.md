@@ -80,7 +80,19 @@ includehead, includefoot]{geometry}
 \renewcommand\chaptername{Бүлэг}
 ```
 
-Making glossary
+#Making index
+\usepackage{imakeidx}
+\makeindex
+
+\addcontentsline{toc}{chapter}{Индекс}
+\printindex
+
+*Multiindex* 
+\makeindex[name=person,title={Index of persons}]
+
+#Glossary and acronyms
+https://texblog.org/2014/01/15/glossary-and-list-of-acronyms-with-latex/
+
 
 #Beamer Template | Slide
 http://xaro.hatenablog.jp/entry/2013/09/18/020615
@@ -91,4 +103,29 @@ http://www.opt.mist.i.u-tokyo.ac.jp/~tasuku/beamer.html
 \begin{flalign}
 & a:=b
 \end{flalign}
+
+#Space in math
+{~~~}
+
+#Column width can be set in tabularx
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\begin{tabularx}{0.75\textwidth}{c *{6}{Y}}
+\toprule
+Foo bar
+ & \multicolumn{3}{c}{Fantastical aardvarks}  
+ & \multicolumn{3}{c}{Spelunking elephants}\\
+\cmidrule(lr){2-4} \cmidrule(l){5-7}
+  & A & B & C & A & B & C\\
+\midrule
+ 5  & 87 &  5 &  2 & 82 & 18 & 48\\
+ 6  &  5 & 43 &  4 &  7 & 47 &  4\\
+ 7  &  7 & 18 & 63 &  2 &  9 & 99\\
+\bottomrule
+\end{tabularx}
+
+#Circling for list enumeration
+\newcommand*\circled[1]{\kern-2em%
+  \put(0,4){\color{white}\circle*{18}}\put(0,4){\circle{16}}%
+  \put(-3,0){\color{black}\bfseries\large#1}~~}
 
