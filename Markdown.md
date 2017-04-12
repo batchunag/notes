@@ -6,6 +6,7 @@ https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 Quicklook osx
 QLMarkdown is a simple QuickLook generator for Markdown files. 
+brew cask install qlmarkdown
 
 
 Sublime packages
