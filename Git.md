@@ -53,6 +53,15 @@ http://stackoverflow.com/questions/61212/how-do-i-remove-local-untracked-files-f
 `git fetch origin`
 `git checkout -b test origin/test`
 
+#Create a local branch and checkout
+`git checkout -b mybranch`
+
+#Push new branch to remote
+git push -u origin <branch>
+
+#Overwrite branch
+git branch -f mybranch
+
 #Clean
 `git clean -df`
 `git checkout -- .`
@@ -83,3 +92,19 @@ git diff mybranch master -- myfile.cs
 
 #git copy from other branch
 git checkout otherbranch myfile.txt
+
+#git update last commit message.
+git commit --amend
+git push origin -f (publishes by force. Should never use at master)
+
+#git patch the difference
+git format-patch mybranch --stdout > diff.patch
+git diff mybranch master > diff.txt
+
+#diff apply the changes
+git apply --stat diff.patch *check the status without applying*
+git apply --check diff.patch *same as above*
+git apply -3 diff.txt *If there are conflicts, it uses 3way merge*
+
+#git amend
+git am -3 < changes.patch *we can use mergetool*
