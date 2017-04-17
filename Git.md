@@ -108,3 +108,8 @@ git apply -3 diff.txt *If there are conflicts, it uses 3way merge*
 
 #git amend
 git am -3 < changes.patch *we can use mergetool*
+
+#git log
+git log --follow file.java *to see all the changes*
+git log -p --follow file.java *to see all the changes with details*
+git log --reverse *see in reversed order*
