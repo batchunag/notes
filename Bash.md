@@ -42,3 +42,16 @@ sed -e 'command1' -e 'command2' data.txt
 sed '2,$ s/alpha/beta/i' data.txt
 sed '/startPattern/,/endPattern/ s/alpha/beta/i' data.txt
 echo 'hello world' | sed 'y/eod/EOD/'
+
+#grep
+egrep '^d': lines that start with d
+egrep : grep -E (regular expression)
+-v: inverts match
+ls -l | egrep '^d' : list all directories
+ls -l | egrep -v '^d': list all non-directories
+
+alias lf="ls -l | egrep -v '^d'"
+alias ldir="ls -l | egrep '^d'"
+
+#List all directories
+ find . -maxdepth 1 -type f 
