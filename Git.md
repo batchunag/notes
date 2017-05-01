@@ -73,6 +73,10 @@ git stash
 sit stash list
 git stash apply stash@{2}
 
+git stash show 1
+git stash show -p 0
+git stash drop 1
+
 #git show
 git show object
 git show $REV:$FILE
