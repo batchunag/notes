@@ -42,6 +42,9 @@ sed -e 'command1' -e 'command2' data.txt
 sed '2,$ s/alpha/beta/i' data.txt
 sed '/startPattern/,/endPattern/ s/alpha/beta/i' data.txt
 echo 'hello world' | sed 'y/eod/EOD/'
+> Find string with specific regex pattern
+echo 'first url,&second=123& third url&asdas' | sed 's/.*\&\(second=[^\&]*\)\&.*/\1/'
+
 
 #grep
 egrep '^d': lines that start with d
