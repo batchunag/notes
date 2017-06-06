@@ -2,6 +2,7 @@
 #Tree structure
 https://coderwall.com/p/owb6eg/view-folder-tree-in-macosx-terminal
 `alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"`
+tree -L 3 . (depth 3)
 
 or download
 http://www.cyberciti.biz/faq/linux-show-directory-structure-command-line/

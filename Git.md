@@ -73,6 +73,10 @@ git stash
 sit stash list
 git stash apply stash@{2}
 
+git stash show 1
+git stash show -p 0
+git stash drop 1
+
 #git show
 git show object
 git show $REV:$FILE
@@ -108,3 +112,8 @@ git apply -3 diff.txt *If there are conflicts, it uses 3way merge*
 
 #git amend
 git am -3 < changes.patch *we can use mergetool*
+
+#git log
+git log --follow file.java *to see all the changes*
+git log -p --follow file.java *to see all the changes with details*
+git log --reverse *see in reversed order*
