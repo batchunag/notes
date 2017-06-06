@@ -129,3 +129,5 @@ Foo bar
   \put(0,4){\color{white}\circle*{18}}\put(0,4){\circle{16}}%
   \put(-3,0){\color{black}\bfseries\large#1}~~}
 
+
+#Cite tag in other page

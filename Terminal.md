@@ -234,3 +234,5 @@ concat strings and stdin & stdout
 echo "input" | awk '{print $1"string"}'
 date +%H | awk '{print "お疲れ様です。"$1"時になりました。"}' | say -v kyoko
 
+#run command on each ls output
+ls *.png | awk -F"." ' { system("convert "$0" -background white -flatten -colorspace CMYK "$1".jpg"); } '

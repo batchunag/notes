@@ -28,3 +28,7 @@ LatexTools + Skim
 
 #Latex autocomplete
 Packages: LaTexIng, Latex-cwl
+
+#Find and replace regex
+(\n[' ']*)(natwidth=[0-9]+)
+$1 $2 or $& for all

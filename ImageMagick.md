@@ -7,4 +7,14 @@ http://www.imagemagick.org/Usage/masking/#bg_remove
                     -shave 1x1  alpha.png
 
 #Crop images
-/opt/ImageMagick/bin/convert 'Desktop/P*.jpeg' -crop '1653x2200+0+0' output/%02d.jpeg               
+/opt/ImageMagick/bin/convert 'Desktop/P*.jpeg' -crop '1653x2200+0+0' output/%02d.jpeg        
+#Getting colorspace
+identify -verbose image.jpg | grep "Colorspace:"       
+
+#convert transparent png to white jpg
+convert img23.png -size 480x320 xc:white +swap -compose over -composite img23.jpg
+
+convert img23.png -background white -flatten img23.jpg
+
+#Convert color-space
+convert img23.jpg -colorspace CMYK img23_cmyk.jpg
