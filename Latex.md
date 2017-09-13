@@ -131,3 +131,38 @@ Foo bar
 
 
 #Cite tag in other page
+\ref{fig22:bintree}
+\label{ig22:bintree}
+
+#Box for inline side notes
+\newtcolorbox{sidebox}[1][]
+{
+ arc=3mm,
+ left skip=42mm,
+ beforeafter skip=0cm,
+ colframe=white!0!white,
+}
+
+#Nice symbols dingbat
+\usepackage{dingbat}
+\leftpointright
+>  you may need \usepackage{pifont}
+
+
+#Aligned formula in bold
+\vspace*{-3mm}
+{\mathversion{bold}
+\begin{equation*}
+\begin{aligned}
+dp[i][j] = \sum_{k=0}^j dp[i-1][j-k]
+\end{aligned}
+\end{equation*}
+}
+
+\vspace*{-3mm} 
+\noindent 
+
+#titlespacing default value
+\titlespacing*{\section}
+{0pt}{*1}{*1}
+--> times 1
