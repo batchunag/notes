@@ -56,6 +56,9 @@ http://stackoverflow.com/questions/61212/how-do-i-remove-local-untracked-files-f
 #Create a local branch and checkout
 `git checkout -b mybranch`
 
+#Delete local branch
+`git delete -b mybranch`
+
 #Push new branch to remote
 git push -u origin <branch>
 
@@ -76,6 +79,8 @@ git stash apply stash@{2}
 git stash show 1
 git stash show -p 0
 git stash drop 1
+
+git stash {command} {hash} //For dropped stash
 
 #git show
 git show object
