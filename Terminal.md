@@ -236,4 +236,16 @@ echo "input" | awk '{print $1"string"}'
 date +%H | awk '{print "お疲れ様です。"$1"時になりました。"}' | say -v kyoko
 
 #run command on each ls output
-ls *.png | awk -F"." ' { system("convert "$0" -background white -flatten -colorspace CMYK "$1".jpg"); } '
+ls *.png | awk -F"." ' { system("convert "$0" -background white -flatten -colorspace CMYK "$1".jpg"); } ' 
+.*
+
+#pyenv
+pyenv version  `see current pyenv`
+pyenv versions  `list all versions`
+pyenv global myenv `switch global version to myenv`
+
+
+#Export pdf pages into images
+Make automation workflow:
+
+https://superuser.com/questions/88379/batch-convert-multiple-pdf-to-image-on-mac
