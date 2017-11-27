@@ -57,7 +57,7 @@ http://stackoverflow.com/questions/61212/how-do-i-remove-local-untracked-files-f
 `git checkout -b mybranch`
 
 #Delete local branch
-`git delete -b mybranch`
+`git branch -d mybranch`
 
 #Push new branch to remote
 git push -u origin <branch>
