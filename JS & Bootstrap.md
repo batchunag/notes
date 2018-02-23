@@ -147,3 +147,27 @@ Libraries like FusionCharts, GoogleCharts, Dygraphs or one of the D3 derivatives
 
 #DOM traversing without jQuery
 https://www.w3.org/wiki/Traversing_the_DOM
+
+#Make syncronous
+Use callback function
+```javascript
+function (event, callback) {
+  if(callback && typeof callback === "function") {
+      callback();
+  }
+}
+
+$(obj).trigger('change', [function () { doThis();}]);
+
+```
+
+#HashMap, map
+var myMap = {};
+if ("key" in myMap){
+    //Key exists
+}
+
+
+#add class
+var element = document.getElementById("div1");
+element.classList.add("otherclass");

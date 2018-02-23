@@ -99,6 +99,9 @@ diff two branch
 git diff --name-status branch1 branch2
 git diff mybranch master -- myfile.cs
 
+#See previous commit changes
+git diff HEAD^ HEAD
+
 #git copy from other branch
 git checkout otherbranch myfile.txt
 
@@ -122,3 +125,10 @@ git am -3 < changes.patch *we can use mergetool*
 git log --follow file.java *to see all the changes*
 git log -p --follow file.java *to see all the changes with details*
 git log --reverse *see in reversed order*
+
+
+#Ignore changes to a file that's already tracked 
+git update-index --assume-unchanged <file>
+
+#See committed changes about to be pushed
+git diff (--stat) --cached origin/my_branch

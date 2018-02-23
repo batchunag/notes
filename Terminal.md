@@ -249,3 +249,16 @@ pyenv global myenv `switch global version to myenv`
 Make automation workflow:
 
 https://superuser.com/questions/88379/batch-convert-multiple-pdf-to-image-on-mac
+
+#grep
+egrep '^d': lines that start with d
+egrep : grep -E (regular expression)
+-v: inverts match
+ls -l | egrep '^d' : list all directories
+ls -l | egrep -v '^d': list all non-directories
+
+alias lf="ls -l | egrep -v '^d'"
+alias ldir="ls -l | egrep '^d'"
+
+#List all directories
+ find . -maxdepth 1 -type f 
