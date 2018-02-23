@@ -45,16 +45,3 @@ echo 'hello world' | sed 'y/eod/EOD/'
 > Find string with specific regex pattern
 echo 'first url,&second=123& third url&asdas' | sed 's/.*\&\(second=[^\&]*\)\&.*/\1/'
 
-
-#grep
-egrep '^d': lines that start with d
-egrep : grep -E (regular expression)
--v: inverts match
-ls -l | egrep '^d' : list all directories
-ls -l | egrep -v '^d': list all non-directories
-
-alias lf="ls -l | egrep -v '^d'"
-alias ldir="ls -l | egrep '^d'"
-
-#List all directories
- find . -maxdepth 1 -type f 

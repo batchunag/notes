@@ -11,15 +11,21 @@ http://www.programcreek.com/2013/04/frequently-used-methods-of-java-hashmap/
 sb.append(String.format("%.3f\n",ans));
 
 #注意comparator for long types
+
+#asd
+```code
 return l1 -l2 --> doesn't work, should be like below
 	if (l1>l2)
 		return 1;
-	if (l1<l2)
+    if (l1<l2)
 		return -1;
 	return 0;
+```
 
 #Edit Java entity object as a hashmap (JSON)
 https://www.leveluplunch.com/java/examples/convert-object-bean-properties-map-key-value/
+
+```java
 public void convert_object_to_map_jackson () {
 
     NoteBook moleskineNoteBook = new NoteBook(200, "Moleskine Notebooks");
@@ -32,3 +38,18 @@ public void convert_object_to_map_jackson () {
     assertThat(objectAsMap, hasEntry("numberOfSheets", (Object) new Double(200.0)));
     assertThat(objectAsMap, hasEntry("description", (Object) "Moleskine Notebooks"));
 }
+```
+
+#ArrayList initialization
+ArrayList<String> cities = new ArrayList<>(Arrays.asList("London", "Tokyo", "New York"));
+
+
+#JSON conversion
+import net.sf.json.JSONObject;
+import net.sf.json.JSONArray;
+
+final String data = request.getParameter("data");
+final JSONObject resultMap = JSONObject.fromObject(data);
+
+final JSONArray resultArray = resultMap.getJSONArray("items");
+final String resultString = resultMap.getString("item");
