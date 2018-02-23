@@ -46,7 +46,9 @@ Assuming you want to blow away all commits from your branch (VERY DESTRUCTIVE):
 #Clean Untracked files
 http://stackoverflow.com/questions/61212/how-do-i-remove-local-untracked-files-from-my-current-git-branch
 
+To see the changes
 `git clean -f -n` (-fd directories)  
+To execute
 `git clean -f` (-fd directories)  
 
 #Checkout remote branch

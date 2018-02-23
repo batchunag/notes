@@ -93,7 +93,6 @@ Q & A
 x = "%03d %03d" % (1,10)
 
 
-
 Not answered
 ---
 > 
@@ -174,13 +173,13 @@ t = [c for c in s]
 y = sorted(x)
 
 #Read from file
-fo = open("foo.txt", "wb")
-print "Name of the file: ", fo.name
-print "Closed or not : ", fo.closed
-with open(fname) as f:
-    next(f)
+with open('filename') as f:
+    lines = f.readlines()
 
-    for line in f:
+with open("file.txt", "r") as ins:
+    array = []
+    for line in ins:
+        array.append(line)    
 
 #Globally Unique User Identifier GUUID
 import uuid
@@ -517,6 +516,11 @@ export PYTHONPATH=/Users/me/.virtualenvs/my-env/bin/python$PYTHONPATH
 →brewのpy2cairo（かigraph）は自分のpythonに対してやっていたと思われる
 
 
+#Set from list
+lst = ['bab' , 'abc', 'cab']
+for word in lst:
+  anag.append(''.join(sorted(list)))
+s = set(anag)
 
 
 
