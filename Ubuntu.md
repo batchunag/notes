@@ -1,6 +1,7 @@
 #Desktop shortcuts
 Desktop entries are located in
  /usr/share/applications or in ~/.local/share/applications 
+
 Applications may have different names.
 
 #Fix networking from command line
@@ -35,3 +36,7 @@ sudo apt-get autoremove
 #Change cpu governor
 sudo apt-get install cpufrequtils
 sudo cpufreq-set -r -g performance
+
+#Check apt-get package version
+apt-cache policy <package name>
+

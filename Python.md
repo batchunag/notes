@@ -32,6 +32,10 @@ x = "sa \
 for idx, val in enumerate(ints):
     print idx, val
 
+#see current folder pwd
+import os
+cwd = os.getcwd()    
+
 
 Notes
 ---
@@ -180,6 +184,26 @@ with open("file.txt", "r") as ins:
     array = []
     for line in ins:
         array.append(line)    
+
+#write to file
+f= open("greet.txt","w+")
+  f.write("Hello: %s\n" % ("World"))
+f.close()
+
+#Write srt file: subtitlte
+f= open("file.srt","w+")
+for i in range(30):
+  #Required
+  f.write("%d\n" %i)
+  f.write("00:00:%02d,00 --> 00:00:%02d,00\n" % (i, i+1))
+  f.write("Hello it is sec: %d\n\n" % i)
+f.close()
+
+
+#pwd, cwd, working directory
+import os
+cwd = os.getcwd()
+
 
 #Globally Unique User Identifier GUUID
 import uuid

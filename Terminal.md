@@ -273,3 +273,13 @@ awk -F'#|FF|[-=]' '{print $2}'
 
 #see gpu usage
 sudo watch nvidia-smi
+
+#Curl Post request
+curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -X POST http://localhost:3000/data
+
+#Tail -f alternative
+less +F file.log
+> Ctrl-c to go to “normal” less mode to make a search with /element
+> F to monitor back
+tail -f is for monitoring multiple files
+	tail -f *.txt

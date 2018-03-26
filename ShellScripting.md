@@ -32,3 +32,13 @@ echo ${array[@]}
 
 #Run processes parallel with bash
 a.sh & b.sh
+
+#get argument
+ $1
+ $2
+
+#loop in folder
+for entry in "$search_dir"/*
+do
+  echo "$entry"
+done
