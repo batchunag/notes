@@ -13,7 +13,6 @@ docker rm $(docker ps -a -q)
 #remove all docker images
 docker rmi $(docker images -q)
 
-
 #Command line access to the container 
  enter-container image
 
@@ -39,3 +38,6 @@ find '/var/lib/docker/volumes/' -mindepth 1 -maxdepth 1 -type d | grep -vFf <(
 
 #kill processes with specific names
 dockeri rm $(docker ps |grep 'hobo' | awk '{print $1;}')
+
+#Docker IP
+docker inspect <container ID>
