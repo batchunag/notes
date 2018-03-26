@@ -1,4 +1,5 @@
-Installer: http://cactuslab.com/imagemagick/
+#Installer: 
+http://cactuslab.com/imagemagick/
 http://www.imagemagick.org/Usage/masking/#bg_remove
 
 #Convert jpg into png and remove white background
@@ -18,3 +19,6 @@ convert img23.png -background white -flatten img23.jpg
 
 #Convert color-space
 convert img23.jpg -colorspace CMYK img23_cmyk.jpg
+
+#Get dominant color
+convert $1 +dither -colors 2 -define histogram:unique-colors=true -format "%c" histogram:info: | awk -F'#' '{print $2}' | awk -F'FF' '{print $1}'

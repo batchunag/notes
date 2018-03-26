@@ -523,5 +523,8 @@ for word in lst:
 s = set(anag)
 
 
+#virtualenv problems
+> Check printenv
 
-
+pip install -I package 
+pip list

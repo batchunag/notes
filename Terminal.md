@@ -262,3 +262,14 @@ alias ldir="ls -l | egrep '^d'"
 
 #List all directories
  find . -maxdepth 1 -type f 
+
+#awk get i-th parameter
+awk -F'#' '{print $2}' 
+#awk split with other parameter
+awk -F'FF' '{print $1}'
+
+#awk multiple delimiter
+awk -F'#|FF|[-=]' '{print $2}'
+
+#see gpu usage
+sudo watch nvidia-smi

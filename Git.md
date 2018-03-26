@@ -134,3 +134,6 @@ git update-index --assume-unchanged <file>
 
 #See committed changes about to be pushed
 git diff (--stat) --cached origin/my_branch
+
+#git recursive download
+git clone --recurse-submodules -j8 git://github.com/foo/bar.git
