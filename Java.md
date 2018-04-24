@@ -1,11 +1,14 @@
 Difference of HashMap vs Treemap vs LinkedHashMap
 -----
 Treemap: keys are sorted
-
 http://www.programcreek.com/2013/03/hashmap-vs-treemap-vs-hashtable-vs-linkedhashmap/]
 
 HashMap methods
 http://www.programcreek.com/2013/04/frequently-used-methods-of-java-hashmap/
+
+#Remember to
+use JodaTime over TimeUnit etc.
+check "){"
 
 #String formatting
 sb.append(String.format("%.3f\n",ans));
@@ -48,6 +51,10 @@ String[] myStringArray = new String[]{"a","b","c"};
 
 #Array to list
 Arrays.asList(myArr)
+
+#New Immutable Empty list
+ImmutableList.of()
+
 
 #JSON conversion
 import net.sf.json.JSONObject;
@@ -135,3 +142,15 @@ So if we want to clone the request, we should use custom HttpServletRequestWrapp
         String foo = request.getParameter("foo"); // Returns "bar".
     }
 
+#Unit test
+EasyMock
+Expect -> Replay -> Verify
+
+replyAll() -> verifyAll() -> resetAll()
+
+#Redirect
+response.sendRedirect(internalUrl);
+response.setHeader(externalUrl);
+
+#Custom Header
+request.getHeader("user-agent");

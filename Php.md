@@ -32,3 +32,7 @@ mt_rand() / mt_getrandmax();
 #install on nginx
 http://todsul.com/tech/install-and-configure-php-fpm-on-nginx/
 http://qiita.com/tukiyo3/items/b1d29a257c41d97d6107
+
+#string functions
+strlen(s)
+strstr(s): index of substring

@@ -35,3 +35,6 @@ final JSONArray jArray = new JSONArray();
 for (int i = 1; i< myList.size()+1; i++){
     jArray.set(i, new JSONString(myList.get(i)));
 }
+
+#GWT Remote Debugging
+http://remotedomain.com:8888/?gwt.codesvr=127.0.0.1:9997 

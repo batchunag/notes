@@ -56,13 +56,17 @@ screen -r #process_name    : return to process
 screen -S newone   :  create and attach to new screen named newone
 screen -D : power detach screen
 
+screen -L -S testscreen : logs screen output into screen.0 file under pwd. Useful when using tailf thereafter.
+
 ctrl + A + D : detach from screen
+
+use Ctrl + A + Esc : And navigate to up.
 
 #foreground and background
 Ctrl+Z and bg %job_id	
 run `jobs` to see jobs
 to bring back `fg %job_id`
-> orphan processes can not be controlled but except being killed.
+> orphan processes can not be controlled except being killed.
 
 kill -9 PID
 

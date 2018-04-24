@@ -19,6 +19,15 @@ See small icons in IDE.
 #Compilation
 Use "Mark directory as"
 and Rebuild
+<<<<<<< HEAD
 
 #Long full qualifed imports like com.google.common.base.Strings
---> uncheck "Use fully qualified class names" in Code Style (Iimports)
+--> uncheck "Use fully qualified class names" in Code Style (Imports)
+
+
+#Keyboard freezes
+ibus-daemon -rd
+
+#indy
+$ indy -u status
+$ indy -u commit -m "Commit message" -r alpha beta

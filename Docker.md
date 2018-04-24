@@ -44,3 +44,9 @@ docker inspect <container ID>
 
 #Start docker daemon
 boot2docker up	
+
+#Top-like interface for container metrics
+ctop
+https://github.com/bcicen/ctop
+
+#cadvisor for status
