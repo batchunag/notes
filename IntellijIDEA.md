@@ -19,3 +19,10 @@ See small icons in IDE.
 #Compilation
 Use "Mark directory as"
 and Rebuild
+
+#Keyboard freezes
+ibus-daemon -rd
+
+#indy
+$ indy -u status
+$ indy -u commit -m "Commit message" -r alpha beta

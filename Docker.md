@@ -41,3 +41,9 @@ dockeri rm $(docker ps |grep 'hobo' | awk '{print $1;}')
 
 #Docker IP
 docker inspect <container ID>
+
+#Top-like interface for container metrics
+ctop
+https://github.com/bcicen/ctop
+
+#cadvisor for status

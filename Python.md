@@ -546,6 +546,7 @@ for word in lst:
   anag.append(''.join(sorted(list)))
 s = set(anag)
 
-
+#Inline filter
+[ EXP for x in seq if COND ]
 
 

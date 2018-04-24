@@ -108,7 +108,7 @@ git diff HEAD^ HEAD
 git checkout otherbranch myfile.txt
 
 #git update last commit message.
-git commit --amend (it also works before push)
+git commit --amend -m "my message"(it also works before push)
 git push origin -f (publishes by force. Should never use at master)
 
 #git patch the difference
