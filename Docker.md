@@ -41,3 +41,6 @@ dockeri rm $(docker ps |grep 'hobo' | awk '{print $1;}')
 
 #Docker IP
 docker inspect <container ID>
+
+#Start docker daemon
+boot2docker up	
