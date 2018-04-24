@@ -549,4 +549,8 @@ s = set(anag)
 #Inline filter
 [ EXP for x in seq if COND ]
 
+#virtualenv problems
+> Check printenv
 
+pip install -I package 
+pip list

@@ -267,6 +267,17 @@ alias ldir="ls -l | egrep '^d'"
 #List all directories
  find . -maxdepth 1 -type f 
 
+#awk get i-th parameter
+awk -F'#' '{print $2}' 
+#awk split with other parameter
+awk -F'FF' '{print $1}'
+
+#awk multiple delimiter
+awk -F'#|FF|[-=]' '{print $2}'
+
+#see gpu usage
+sudo watch nvidia-smi
+
 #Curl Post request
 curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -X POST http://localhost:3000/data
 
