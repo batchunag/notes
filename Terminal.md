@@ -287,3 +287,7 @@ less +F file.log
 > F to monitor back
 tail -f is for monitoring multiple files
 	tail -f *.txt
+
+#Zip file with password
+zip -e archivename.zip filetoprotect.txt
+zip -er archive.zip /path/to/directory/
