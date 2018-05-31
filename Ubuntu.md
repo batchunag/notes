@@ -40,7 +40,6 @@ sudo cpufreq-set -r -g performance
 #Check apt-get package version
 apt-cache policy <package name>
 
-
 #Intercept http connections
 https://askubuntu.com/questions/252179/how-to-inspect-outgoing-http-requests-of-a-single-application
 > Run with sudo -i
@@ -58,3 +57,17 @@ killall tcpdump
 To read the log, use the -A flag and pipe the output toless:
 
 tcpdump -A -r /tmp/http.log | less
+
+#apt-get install specific version
+apt-get install <package>=version
+
+#cputool: limit cpu usage by pid
+cputool --cpu-limit (or -c) 80 -p <pid>	
+> (-P is for group)
+
+3197
+
+#ubuntu window dragging stuck
+> Press ESC or Window several times.
+> Press Alt + Enter
+https://askubuntu.com/questions/607867/ubuntu-14-04-gets-stuck-in-workspace-switcher-window

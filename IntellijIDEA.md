@@ -20,6 +20,9 @@ See small icons in IDE.
 Use "Mark directory as"
 and Rebuild
 
+#Long full qualifed imports like com.google.common.base.Strings
+--> uncheck "Use fully qualified class names" in Code Style (Imports)
+
 #Keyboard freezes
 ibus-daemon -rd
 

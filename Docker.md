@@ -42,6 +42,9 @@ dockeri rm $(docker ps |grep 'hobo' | awk '{print $1;}')
 #Docker IP
 docker inspect <container ID>
 
+#Start docker daemon
+boot2docker up	
+
 #Top-like interface for container metrics
 ctop
 https://github.com/bcicen/ctop
@@ -50,10 +53,7 @@ https://github.com/bcicen/ctop
 
 #start docker
 
-
 docker errors
-
-
 
 #docker container log: Useful esp. when hobo is successful but you don't see the ip address
 docker logs <containter-name>
