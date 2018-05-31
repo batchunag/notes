@@ -16,7 +16,7 @@ https://help.github.com/articles/generating-ssh-keys/#step-4-add-your-ssh-key-to
 #Gitignore
 http://stackoverflow.com/questions/1139762/ignore-files-that-have-already-been-committed-to-a-git-repository
 
-```sh
+```bash
 *it is safer*
 git rm --cached filename 
 
@@ -100,6 +100,10 @@ The first few (maybe 5) characters of a given SHA1 hash
 diff two branch
 git diff --name-status branch1 branch2
 git diff mybranch master -- myfile.cs
+
+#git diff stashes
+git diff -p stash@{2} -p stash@{3}
+
 
 #See previous commit changes
 git diff HEAD^ HEAD

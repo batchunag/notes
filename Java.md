@@ -154,3 +154,6 @@ response.setHeader(externalUrl);
 
 #Custom Header
 request.getHeader("user-agent");
+
+#Propertiy file reader
+Juice

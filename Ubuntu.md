@@ -26,7 +26,7 @@ Applications may have different names.
 Remove bad scripts in /etc/init.d
 
 #Broken packages
-sudo apt-get update –fix-missing
+sudo apt-get update --fix-missing
 
 sudo apt-get autoclean
 sudo apt-get update
@@ -40,3 +40,21 @@ sudo cpufreq-set -r -g performance
 #Check apt-get package version
 apt-cache policy <package name>
 
+
+#Intercept http connections
+https://askubuntu.com/questions/252179/how-to-inspect-outgoing-http-requests-of-a-single-application
+> Run with sudo -i
+
+To capture the RAW packets ...
+
+sudo tcpdump -i any -w /tmp/http.log &
+This will capture all the raw packets, on all ports, on all interfaces and write them to a file, /tmp/http.log.
+
+Run your application. It obviously helps if you do not run any other applications that use HTTP (web browsers).
+
+Kill tcpdump
+
+killall tcpdump
+To read the log, use the -A flag and pipe the output toless:
+
+tcpdump -A -r /tmp/http.log | less

@@ -47,3 +47,16 @@ ctop
 https://github.com/bcicen/ctop
 
 #cadvisor for status
+
+#start docker
+
+
+docker errors
+
+
+
+#docker container log: Useful esp. when hobo is successful but you don't see the ip address
+docker logs <containter-name>
+
+#find container name
+Run advanced docker ps, or run the docker command again.	

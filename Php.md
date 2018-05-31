@@ -36,3 +36,6 @@ http://qiita.com/tukiyo3/items/b1d29a257c41d97d6107
 #string functions
 strlen(s)
 strstr(s): index of substring
+
+#atlassian oauth
+https://bitbucket.org/atlassian_tutorial/atlassian-oauth-examples/src/3f0d22c5b1d8749fae6f05aa3556ca8ac3724b5a/php/src/Atlassian/OAuthWrapper.php?at=default&fileviewer=file-view-default
