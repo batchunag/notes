@@ -280,6 +280,7 @@ sudo watch nvidia-smi
 
 #Curl Post request
 curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -X POST http://localhost:3000/data
+curl -su username ... *to prompt for password*
 
 #Tail -f alternative
 less +F file.log

@@ -61,6 +61,9 @@ To execute
 #Delete local branch
 `git branch -d mybranch`
 
+#Delete remote branch
+` git push origin --delete feature/login`
+
 #Push new branch to remote
 git push -u origin <branch>
 
@@ -141,3 +144,22 @@ git diff (--stat) --cached origin/my_branch
 
 #git recursive download
 git clone --recurse-submodules -j8 git://github.com/foo/bar.git
+
+#git rebase
+git rebase -i --onto master A *Replay changes of A onto (head of master) and updates current (branch) head*
+We can create new branch first and do rebase using it.
+
+git rebase --onto oldBase commitFrom commitTo
+
+#rename a branch
+> Step 1: Renaming Local Branch
+	When you are currently on the branch you want to rename
+	git branch -m new-name
+When you are not currently on the branch you want to rename
+	`git branch -m old-name new-name`
+Step 2: Delete the old-name remote branch and push the new-name local branch.
+	git push origin :old-name new-name
+Step 3: Reset the upstream branch for the new-name local branch. Switch to the branch and then execute the command.
+	git push origin -u new-name
+
+	

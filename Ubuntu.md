@@ -22,7 +22,7 @@ Applications may have different names.
 > Unable to remove CLI library packages
 	sudo rm /var/lib/dpkg/info lib{glade,glib,gtk}2.0-cil.postrm
 
-#insserv LSB dpkg dependency error 
+#insserv: LSB dpkg dependency error 
 Remove bad scripts in /etc/init.d
 
 #Broken packages
@@ -33,12 +33,18 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get autoremove
 
+#remove specific package
+sudo apt-get remove <package_name>
+
 #Change cpu governor
 sudo apt-get install cpufrequtils
 sudo cpufreq-set -r -g performance
 
 #Check apt-get package version
 apt-cache policy <package name>
+
+#Get all packages installed
+sudo apt list --installed
 
 #Intercept http connections
 https://askubuntu.com/questions/252179/how-to-inspect-outgoing-http-requests-of-a-single-application
@@ -71,3 +77,6 @@ cputool --cpu-limit (or -c) 80 -p <pid>
 > Press ESC or Window several times.
 > Press Alt + Enter
 https://askubuntu.com/questions/607867/ubuntu-14-04-gets-stuck-in-workspace-switcher-window
+
+#Nice terminal
+Guake: https://www.binarytides.com/install-guake-xubuntu-14-04/

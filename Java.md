@@ -56,6 +56,9 @@ Arrays.asList(myArr)
 ImmutableList.of()
 
 
+#Immutable List to Immutable Set
+final ImmutableSet<String> mySet = ImmutableSet.copyOf(myList);
+
 #JSON conversion
 import net.sf.json.JSONObject;
 import net.sf.json.JSONArray;
@@ -157,3 +160,27 @@ request.getHeader("user-agent");
 
 #Propertiy file reader
 Juice
+
+#Guava caching
+```java
+ private final Cache<String, ImmutableList<Integer>> KEY_IDS_CACHE = CacheBuilder.newBuilder()
+            .expireAfterWrite(12, TimeUnit.HOURS)
+            .build();
+
+private ImmutableList<Integer> getIdsCache(final String key) {
+        @Nullable final ImmutableList<String> cache = KEY_IDS_CACHE.getIfPresent(key);
+        if (cache != null) {
+            return cache;
+        }
+        synchronized (KEY_IDS_CACHE) {
+            @Nullable final ImmutableList<String> cacheSecondTry = KEY_IDS_CACHE.getIfPresent(key);
+            if (cacheSecondTry != null) {
+                return cacheSecondTry;
+            }
+
+            final ImmutableList<Integer> idsList = getIds(key);
+            KEY_IDS_CACHE.put(key, idsList);
+
+            return idsList;
+        }
+    }
