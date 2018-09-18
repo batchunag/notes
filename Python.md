@@ -554,3 +554,9 @@ s = set(anag)
 
 pip install -I package 
 pip list
+
+#pyenv help
+https://github.com/pyenv/pyenv
+
+#install kernel to env
+`ipython kernel install --user --name=projectname`
