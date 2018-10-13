@@ -176,6 +176,7 @@ Foo bar
 
 
 #Aligned formula in bold
+```latex
 \vspace*{-3mm}
 {\mathversion{bold}
 \begin{equation*}
@@ -187,6 +188,7 @@ dp[i][j] = \sum_{k=0}^j dp[i-1][j-k]
 
 \vspace*{-3mm} 
 \noindent 
+```
 
 #titlespacing default value
 \titlespacing*{\section}

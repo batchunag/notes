@@ -292,3 +292,5 @@ tail -f is for monitoring multiple files
 #Zip file with password
 zip -e archivename.zip filetoprotect.txt
 zip -er archive.zip /path/to/directory/
+
+Jh0-Pqe-8Zu
