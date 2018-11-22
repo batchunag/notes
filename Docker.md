@@ -60,3 +60,15 @@ docker logs <containter-name>
 
 #find container name
 Run advanced docker ps, or run the docker command again.	
+
+#Move the container directory to different place
+https://linuxconfig.org/how-to-move-docker-s-default-var-lib-docker-to-another-directory-on-ubuntu-debian-linux
+0) Stop the docker `systemctl stop docker`
+> Use -H flag to keep the hardlinks.
+	rsync -aqxPH /var/lib/docker/ /new/path/docker
+> Edit `sudo systemctl edit docker` instead of `sudo vim /lib/systemd/system/docker.service`
+	FROM:
+	ExecStart=/usr/bin/docker daemon -H fd://
+	TO:
+	ExecStart=/usr/bin/docker daemon -g /new/path/docker -H fd://
+1) Start the docker `systemctl start docker`

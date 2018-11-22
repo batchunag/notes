@@ -153,7 +153,18 @@ So if we want to clone the request, we should use custom HttpServletRequestWrapp
 EasyMock
 Expect -> Replay -> Verify
 
-replyAll() -> verifyAll() -> resetAll()
+replayAll() -> verifyAll() -> resetAll()
+
+```java
+EasyMock.expect(returnFunction("woot", 5)).andReturn(123);
+EasyMock.expect(returnFunction("fubar", 45)).andReturn(321);
+voidFuntion("p");
+EasyMock.expectLastCall();
+```
+
+For promise function:
+final Promise<Void> voidPromise =  createMock(Promise.class);
+expect(voidPromise.claim()).andReturn(null);
 
 #Redirect
 response.sendRedirect(internalUrl);
@@ -198,3 +209,14 @@ private ImmutableList<Integer> getIdsCache(final String key) {
      Exception:
 
 We don't need *throws* for RuntimeException     
+
+#Abstract class for Utility class
+You could just declare a private constructor that does nothing.
+"abstract" keyword usually means that class is *intended to be subclassed and extended*. That's definitely not what you want here.
+More discussion: https://stackoverflow.com/questions/309553/should-helper-utility-classes-be-abstract
+
+#Private constructor
+> The use of private constructor is to serve singleton classes. 
+
+#Static method: Method without needing of the object
+> One rule-of-thumb: ask yourself "does it make sense to call this method, even if no Obj has been constructed yet?" If so, it should definitely be static.

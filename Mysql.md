@@ -1,6 +1,15 @@
+
+
 #Workout for mysql socket error on OSX because of MAMP
 `Can't connect to local MySQL server through socket '/tmp/mysql.sock'`
 ln -s /Applications/MAMP/tmp/mysql/mysql.sock /tmp/mysql.sock
+
+`Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock'`
+Couldn't figure out the exact problem. But see below.
+Docker has different socket file in its container!
+
+The mysql.sock file is created when INSTANCE starts and is removed when INSTANCE is shutdown.
+
 
 #user authentication or login
 Since 5.7? password column was changed to authentication_string
