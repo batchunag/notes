@@ -3,6 +3,13 @@ https://help.github.com/articles/caching-your-github-password-in-git/#platform-l
 
 Set 3600 or 7200
 
+#case insensitive issue
+osx could be set to case insensitive by default. It comes to git as well.
+In that case, we should use.
+*git config core.ignorecase false*
+--> Not working. Instead created case sensitive volume in the main disk.
+And using symbolic link for shortcut.
+
 #Git see what changed
 http://stackoverflow.com/questions/8522619/how-do-i-get-the-list-of-files-about-to-be-updated-by-git-pull-without-knowing
 
@@ -161,5 +168,13 @@ Step 2: Delete the old-name remote branch and push the new-name local branch.
 	git push origin :old-name new-name
 Step 3: Reset the upstream branch for the new-name local branch. Switch to the branch and then execute the command.
 	git push origin -u new-name
+
+
+#For open source project
+1) Fork the project
+2) Add upstream: git remote add upstream https://github.com/matthewsamuel95/ACM-ICPC-Algorithms.git
+3) git pull upstream master && git push origin master
+4) git push -u origin master
+5) Open Pull Request for upstream place.	
 
 	

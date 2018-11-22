@@ -43,6 +43,10 @@ public void convert_object_to_map_jackson () {
 
 #ArrayList initialization
 ArrayList<String> cities = new ArrayList<>(Arrays.asList("London", "Tokyo", "New York"));
+ArrayList<Integer> array = new ArrayList<Integer>(10);
+> Although it's capacity is 10, it's size is still 0!.
+List<Integer> list = new ArrayList<Integer>(Collections.nCopies(100, 0));
+
 
 #String[] initialization
 String[] myStringArray = new String[3];
@@ -184,3 +188,13 @@ private ImmutableList<Integer> getIdsCache(final String key) {
             return idsList;
         }
     }
+```
+
+#Exceptions
+
+ > Unchecked exception: defects in the program (bugs)
+    RuntimeExceptions: IllegalArgumentException, NullPointerException, or IllegalStateException
+>  Checked exception: invalid conditions in areas outside the immediate control of the program
+     Exception:
+
+We don't need *throws* for RuntimeException     

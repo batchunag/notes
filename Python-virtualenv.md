@@ -1,4 +1,10 @@
-#
+#Very differences between virtual envs.
+https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe
+
+#Decided to use pipenv
+https://pypi.org/project/pipenv/
+Mostly because it's new, combines both pip and virtualenv.
+
 #Install from system python
 virtualenv --python=/usr/bin/python2.6 <path/to/new/virtualenv/>
 

@@ -25,6 +25,8 @@ $ mv ~/Default\ \(OSX\).sublime-keymap ./Packages/Default/
 #Latex Compiler & pdf sync
 http://economistry.com/2013/01/installing-and-using-latex-for-mac/
 LatexTools + Skim
+Default viewer settings: 
+Library/Application\ Support/Sublime\ Text\ 3/Packages/LaTeXTools/jumpToPDF.py
 
 #Latex autocomplete
 Packages: LaTexIng, Latex-cwl
