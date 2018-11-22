@@ -90,6 +90,32 @@ includehead, includefoot]{geometry}
 *Multiindex* 
 \makeindex[name=person,title={Index of persons}]
 
+#xindy
+> 
+```
+\providecommand*\lettergroup[1]{} % Put before imakeidx to remove lettergroups
+\usepackage[xindy]{imakeidx}
+\usepackage{idxlayout} %[initsep=0mm]
+\makeindex[name=eng,title={English Index}]
+\makeindex[name=mon,title={Товьёг}]
+
+%resolve inputenc cyrillics
+\makeatletter 
+\newcommand{\rindex}[2][\imki@jobname]{%
+  \index[#1]{\detokenize{#2}}%
+}
+\makeatother
+```
+
+> texindy to generate ind file
+`texindy -v -L mongolian -C utf8 mon.idx`
+
+
+
+#lsblisting utf8 encoding
+add texcl=true to the \lstset
+https://tex.stackexchange.com/questions/89638/how-to-set-utf8-in-a-lstlisting-error-received
+
 #Glossary and acronyms
 https://texblog.org/2014/01/15/glossary-and-list-of-acronyms-with-latex/
 
@@ -150,6 +176,7 @@ Foo bar
 
 
 #Aligned formula in bold
+```latex
 \vspace*{-3mm}
 {\mathversion{bold}
 \begin{equation*}
@@ -161,6 +188,7 @@ dp[i][j] = \sum_{k=0}^j dp[i-1][j-k]
 
 \vspace*{-3mm} 
 \noindent 
+```
 
 #titlespacing default value
 \titlespacing*{\section}

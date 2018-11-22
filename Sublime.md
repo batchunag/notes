@@ -30,8 +30,15 @@ LatexTools + Skim
 Packages: LaTexIng, Latex-cwl
 
 #Find and replace regex
+```regex
 (\n[' ']*)(natwidth=[0-9]+)
 $1 $2 or $& for all
+```
+
+#Syntax highlighting: Markdown Extended, Monokai Extended
+
+Make sure that the syntax for the current file is set to Markdown Extended:
+
 
 
 #update on ubuntu 16.04 & higher
