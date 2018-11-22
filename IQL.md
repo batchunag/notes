@@ -18,3 +18,12 @@ group by number
 
 #where
 field=~'(word.*)|(.* word.*)' field!=~'aword'
+
+#group by time(1d)
+
+#IQL v1.
+> AND
+((value<=3000) +(value>=0))>1
+
+> OR 
+(columnA = "A" + columnB < B) > 0

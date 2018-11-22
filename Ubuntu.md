@@ -3,6 +3,7 @@ Desktop entries are located in
  /usr/share/applications or in ~/.local/share/applications 
 
 Applications may have different names.
+gnome-desktop-item-edit: might be useful to create app.desktop entry. Or mimic the ones under /usr/share/applications dir.
 
 #Fix networking from command line
 > sudo nano /etc/network/interfaces
@@ -80,3 +81,13 @@ https://askubuntu.com/questions/607867/ubuntu-14-04-gets-stuck-in-workspace-swit
 
 #Nice terminal
 Guake: https://www.binarytides.com/install-guake-xubuntu-14-04/
+
+#mysql in ubuntu
+sudo service mysql status
+Shows the initial settings directory
+
+To find all socket files on your system run:
+`sudo find / -type s`
+
+#Maybe it's because of multiple Mysql instance running in the system.
+https://www.zyxware.com/articles/5539/solved-cant-connect-to-local-mysql-server-through-socket-var-run-mysqld-mysqld-sock

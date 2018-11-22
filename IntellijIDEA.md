@@ -10,7 +10,7 @@ run `ant clean` & `ant clippy-project` on another.
 #Resolve unknown references
 `ant compile`
 
-#hobo list
+#docker list
 docker ps
 
 #Show in navigation explorer
@@ -29,3 +29,4 @@ ibus-daemon -rd
 #indy
 $ indy -u status
 $ indy -u commit -m "Commit message" -r alpha beta
+

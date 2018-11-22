@@ -554,3 +554,8 @@ s = set(anag)
 
 pip install -I package 
 pip list
+
+#Keras
+from keras.utils import np_utils --> error
+> Instlal np_utils independently, and restart the terminal
+    pip install np_utils

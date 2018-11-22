@@ -11,7 +11,8 @@ https://medium.com/@paulrohan/how-to-install-mongodb-on-ubuntu-15-04-and-15-10-9
 
 #Start service
 sudo service mongod start
-Confirm by tailing: /var/log/mongodb/mongod.log
+Confirm by tailing: 
+tail -f /var/log/mongodb/mongod.log
 
 #Restart
 sudo service mongod restart

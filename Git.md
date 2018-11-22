@@ -135,6 +135,8 @@ git log --follow file.java *to see all the changes*
 git log -p --follow file.java *to see all the changes with details*
 git log --reverse *see in reversed order*
 
+git config --global alias.adog "log --all --decorate --oneline --graph" *Nice graphical view: a dog*
+
 
 #Ignore changes to a file that's already tracked 
 git update-index --assume-unchanged <file>
@@ -150,6 +152,10 @@ git rebase -i --onto master A *Replay changes of A onto (head of master) and upd
 We can create new branch first and do rebase using it.
 
 git rebase --onto oldBase commitFrom commitTo
+git rebase --onto A B C
+> Take the diff (B and C) and play it on A but checkout the branch as C.
+So checking out 
+
 
 #rename a branch
 > Step 1: Renaming Local Branch
