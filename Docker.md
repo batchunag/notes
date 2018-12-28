@@ -45,6 +45,11 @@ docker inspect <container ID>
 #Start docker daemon
 boot2docker up	
 
+#restart hobo
+docker stop hobo-consul
+docker rm hobo-consul
+consul-start
+
 #Top-like interface for container metrics
 ctop
 https://github.com/bcicen/ctop

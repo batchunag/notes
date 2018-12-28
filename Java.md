@@ -220,3 +220,10 @@ More discussion: https://stackoverflow.com/questions/309553/should-helper-utilit
 
 #Static method: Method without needing of the object
 > One rule-of-thumb: ask yourself "does it make sense to call this method, even if no Obj has been constructed yet?" If so, it should definitely be static.
+
+
+#Java Classpath
+https://docs.oracle.com/javase/8/docs/technotes/tools/findingclasses.html
+
+#JPA Hibernate
+Enum:  @Enumerated(EnumType.STRING) is requried above the field.
