@@ -31,3 +31,6 @@ ibus-daemon -rd
 $ indy -u status
 $ indy -u commit -m "Commit message" -r alpha beta
 
+#search everywhere
+Double Shift
+Ctrl+Shift+F
