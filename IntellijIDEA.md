@@ -1,3 +1,6 @@
+#How to update in Ubuntu
+Download & Replace
+
 #Idea aliases
 alias idea='~/idea/idea-IC-145.972.3/bin/idea.sh > /dev/null 2>&1 &'
 
@@ -31,3 +34,5 @@ ibus-daemon -rd
 $ indy -u status
 $ indy -u commit -m "Commit message" -r alpha beta
 
+#Ignore dependency
+-Dignore.dependency.errors=$(date +%Y%m%d)
