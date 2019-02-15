@@ -227,3 +227,9 @@ https://docs.oracle.com/javase/8/docs/technotes/tools/findingclasses.html
 
 #JPA Hibernate
 Enum:  @Enumerated(EnumType.STRING) is requried above the field.
+
+#Lombok
+@AllArgsConstructor
+GeneratedValue ID is also included in the constructor.
+Only way is to use class inheritance.
+https://stackoverflow.com/questions/48784923/is-using-id-field-in-allargsconstructor-while-using-spring-jpa-correct

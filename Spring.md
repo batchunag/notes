@@ -16,6 +16,11 @@ https://www.logicbig.com/tutorials/spring-framework/spring-security/user-details
 #Chatbot
 https://github.com/kingbbode/spring-boot-chatbot
 
+#Configuration Vs Component.
+http://dimafeng.com/2015/08/29/spring-configuration_vs_component/
+Place them with same or below package when @SpringBootApplication class is located.
+https://www.concretepage.com/spring-boot/spring-boot-crudrepository-example
+
 #Maven
 junit dependency error
 --> Check scope.
