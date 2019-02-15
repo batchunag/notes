@@ -566,3 +566,17 @@ https://github.com/pyenv/pyenv
 
 #install kernel to env
 `ipython kernel install --user --name=projectname`
+
+
+#PIP memory error
+http://codelectron.com/how-to-solve-memoryerror-during-pip-install/
+>  Turn off cache
+  pip  --no-cache-dir install SpeechRecognition
+
+> Or you can simply use a swap partition to avoid the memory crunch
+> Turn on swap
+  dd if=/dev/zero of=/swapfile bs=1024 count=524288
+  chown root:root /swapfile
+  chmod 0600 /swapfile
+  mkswap /swapfile
+  swapon /swapfile

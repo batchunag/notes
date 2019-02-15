@@ -1,3 +1,9 @@
+#Download MySQL Community Server (OSX)
+https://dev.mysql.com/downloads/mysql/
+	Installed to /usr/local/mysql/bin/mysql
+	sudo mysql.server start
+> ERROR! The server quit without updating PID file
+
 
 
 #Workout for mysql socket error on OSX because of MAMP
@@ -24,11 +30,18 @@ FLUSH PRIVILEGES;
 
 #Grant privileges for root and other users
 `SELECT host,user,password,Grant_priv,Super_priv FROM mysql.user;`
+`SELECT host,user,authentication_string,Grant_priv,Super_priv FROM mysql.user;`
 
 > Then use code below
 	UPDATE mysql.user SET Grant_priv='Y', Super_priv='Y' WHERE User='root';
 	FLUSH PRIVILEGES;
 	GRANT ALL ON *.* TO 'root'@'localhost';
+
+#Specific priviliges
+	GRANT ALL PRIVILEGES ON database.* TO 'user'@'localhost';
+
+#See permissions
+	SHOW GRANTS FOR CURRENT_USER;
 
 #Setup root password
 `mysqladmin -u root password -p 'pass'`
@@ -40,3 +53,12 @@ FLUSH PRIVILEGES;
 	GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
 	FLUSH PRIVILEGES;
 [link](https://askubuntu.com/questions/766334/cant-login-as-mysql-user-root-from-normal-user-account-in-ubuntu-16-04)
+
+#Commands
+SHOW DATABASES
+
+
+#Java Related.
+java.sql.SQLSyntaxErrorException: Table 'mydb.hibernate_sequence' doesn't exist
+->	use @GeneratedValue(strategy = GenerationType.IDENTITY)
+ instead of @GeneratedValue(strategy = GenerationType.AUTO)
