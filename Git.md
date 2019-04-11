@@ -137,6 +137,9 @@ git apply -3 diff.txt *If there are conflicts, it uses 3way merge*
 #git amend
 git am -3 < changes.patch *we can use mergetool*
 
+#Add more changes to previous commit (not pushed yet)
+git rebase -i *We can squash the commits*
+
 #git log
 git log --follow file.java *to see all the changes*
 git log -p --follow file.java *to see all the changes with details*
@@ -191,3 +194,6 @@ Step 3: Reset the upstream branch for the new-name local branch. Switch to the b
 5) Open Pull Request for upstream place.	
 
 	
+#Conflict resolution cached
+`git rerere` 
+https://www.codementor.io/citizen428/git-tutorial-10-common-git-problems-and-how-to-fix-them-aajv0katd	

@@ -27,3 +27,5 @@ field=~'(word.*)|(.* word.*)' field!=~'aword'
 
 > OR 
 (columnA = "A" + columnB < B) > 0
+
+ 

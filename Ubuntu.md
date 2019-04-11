@@ -5,6 +5,11 @@ Desktop entries are located in
 Applications may have different names.
 gnome-desktop-item-edit: might be useful to create app.desktop entry. Or mimic the ones under /usr/share/applications dir.
 
+> Better to copy one in  ~/.local/share/applications 
+
+> Icon path
+	Absolute path or put in /usr/share/icons/ (for system wide) or in your home ~/.icons
+
 #Fix networking from command line
 > sudo nano /etc/network/interfaces
 	auto eth0  
@@ -91,3 +96,5 @@ To find all socket files on your system run:
 
 #Maybe it's because of multiple Mysql instance running in the system.
 https://www.zyxware.com/articles/5539/solved-cant-connect-to-local-mysql-server-through-socket-var-run-mysqld-mysqld-sock
+
+#Install programs(ready to run) under /opt/ directory.
