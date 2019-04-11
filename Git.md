@@ -79,7 +79,7 @@ git branch -f mybranch
 
 #Clean
 `git clean -df`
-`git checkout -- .`
+`git clean -df`
 git clean removes all untracked files and git checkout clears all unstaged changes.
 
 
@@ -162,6 +162,13 @@ git rebase --onto oldBase commitFrom commitTo
 git rebase --onto A B C
 > Take the diff (B and C) and play it on A but checkout the branch as C.
 So checking out 
+
+git rebase master topic == (git checkout topic) + (git rebase master)
+> Replay changes in topic, on master branch. And checks out as topic.
+
+`git rebase -i HEAD~3`
+>Can squash recent 3 commits into one. (works on the same branch). 
+	Not confirmed when the branch is pushed -> Probably overwrites.
 
 
 #rename a branch

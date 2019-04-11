@@ -43,7 +43,7 @@ dockeri rm $(docker ps |grep 'hobo' | awk '{print $1;}')
 docker inspect <container ID>
 
 #Start docker daemon
-boot2docker up	
+boot2docker up
 
 #restart hobo
 docker stop hobo-consul
