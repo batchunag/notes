@@ -68,3 +68,28 @@ https://stackoverflow.com/questions/34172888/difference-between-bean-and-autowir
 #Compressing Resources/API
 server.compression.enabled=true
 server.compression.mime-types=application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css
+server.compression.min-response-size=1024
+More https://www.callicoder.com/configuring-spring-boot-application/
+
+#Gzip for Embedded Container vs External Container
+https://www.javainuse.com/spring/boot-zip
+Couldn't confirm the compression through Postman, but Chrome inspector tool works.
+
+#HTTP client & Feign
+Having (implementing) feign client, makes it easier to use APIs from another project by just importing.
+I.e, another project(client) will just import that (feign)client and use it.
+
+#Caching
+https://qiita.com/yut_arrows/items/4b664acdfa852c0bd6cd
+spring.cache.cache-names=cache1,cache2
+spring.cache.caffeine.spec=maximumSize=500,expireAfterAccess=600s
+https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-caching.html
+
+Only with Spring (needs @EnableScheduling and @EnableCaching)
+
+```java
+@Scheduled(fixedRate = ONE_DAY)
+@CacheEvict(value = { CACHE_NAME })
+public void clearCache() {      
+}
+```
