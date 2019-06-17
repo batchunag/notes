@@ -8,6 +8,7 @@ http://www.programcreek.com/2013/04/frequently-used-methods-of-java-hashmap/
 
 #Remember to
 use JodaTime over TimeUnit etc.
+--> Now, Java libraries like TimeUnit is more preffered over Joda.
 check "){"
 
 #String formatting
@@ -163,6 +164,10 @@ EasyMock.expect(returnFunction("woot", 5)).andReturn(123);
 EasyMock.expect(returnFunction("fubar", 45)).andReturn(321);
 voidFuntion("p");
 EasyMock.expectLastCall();
+
+public myTestClass extends EasyMockSupport {
+
+}
 ```
 
 For promise function:

@@ -45,3 +45,8 @@ $ indy -u commit -m "Commit message" -r alpha beta
 #search everywhere
 Double Shift
 Ctrl+Shift+F
+
+#How to resolve the gradle project.
+- Refresh button
+- Try to reimport the project.
+

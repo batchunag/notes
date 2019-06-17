@@ -293,4 +293,21 @@ tail -f is for monitoring multiple files
 zip -e archivename.zip filetoprotect.txt
 zip -er archive.zip /path/to/directory/
 
-Jh0-Pqe-8Zu
+(Happens to awk or pebble etc.)
+#dyld: Library not loaded: /usr/local/opt/readline/lib/libreadline.7.dylib
+brew info readline
+brew switch readline 7.0.5
+解決法: readlineをインストールし直す
+https://qiita.com/nwtgck/items/f5427c0d0f7827658bd5
+
+One way:
+ sudo ln -s libreadline.8.0.dylib libreadline.7.dylib
+
+#Start Stop Global Protect
+start)
+	`launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangpa.plist`
+    `launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangps.plist`
+
+stop)
+    `launchctl remove com.paloaltonetworks.gp.pangps`
+    `launchctl remove com.paloaltonetworks.gp.pangpa`

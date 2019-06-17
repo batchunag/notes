@@ -114,3 +114,7 @@ public void clearCache() {
 }
 ```
 
+#Encoding issue specially with gcloud
+spring.http.encoding.force=true
+
+More: check the Response Header.

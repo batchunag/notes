@@ -22,3 +22,13 @@ mongod -->  IllegalOperation: Attempted to create a lock file on a read-only dir
 
 > System config
 vim /lib/systemd/system/mongodb.service
+
+
+#On osx
+install mongo https://www.mongodb.com/download-center/community
+`mkdir -p /data/db`
+`sudo chown -R `id -un` /data/db`
+
+Running
+`mongod` for daemon
+`mongo` run in the shell.
