@@ -1,3 +1,0 @@
-Kinkos
-
-Lucy Print

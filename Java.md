@@ -8,6 +8,7 @@ http://www.programcreek.com/2013/04/frequently-used-methods-of-java-hashmap/
 
 #Remember to
 use JodaTime over TimeUnit etc.
+--> Now, Java libraries like TimeUnit is more preffered over Joda.
 check "){"
 
 #String formatting
@@ -155,16 +156,49 @@ Expect -> Replay -> Verify
 
 replayAll() -> verifyAll() -> resetAll()
 
+(Following is better)
+resetAll() -> replayAll() -> verifyAll()
+
 ```java
 EasyMock.expect(returnFunction("woot", 5)).andReturn(123);
 EasyMock.expect(returnFunction("fubar", 45)).andReturn(321);
 voidFuntion("p");
 EasyMock.expectLastCall();
+
+public myTestClass extends EasyMockSupport {
+
+}
 ```
 
 For promise function:
 final Promise<Void> voidPromise =  createMock(Promise.class);
 expect(voidPromise.claim()).andReturn(null);
+
+#Parameterized
+> Required for the test class
+    @RunWith(JUnitParamsRunner.class) 
+    public class MyClassTest () {
+        ..
+    }
+> parametersForTestMyMethod for the testMyMethod.
+Or use @Parameters(method="mySpecialParameters")
+
+```java
+private List parametersForTestMyMethod() {
+    return ImmutableList.of(
+            new Object[] { 1, "Some String", "Expected"},
+            new Object[] { 2, "Another String", "Expected value"}
+    );
+}
+
+@Test
+@Parameters
+public void testMyMethod(final int id, final String value, final String expected) {
+    assertEquals(expected, doSth(id, value));
+}
+
+```    
+
 
 #Redirect
 response.sendRedirect(internalUrl);
@@ -275,3 +309,52 @@ https://stackoverflow.com/questions/27952472/serialize-deserialize-java-8-java-t
 
 #Cron
 Cron schedule is absolute: "0 0 */6 * * *", here */6 is same as 0/6, or 0,6,12,18.
+
+#Read from file, map, stream
+
+https://www.baeldung.com/java-serialization
+https://www.baeldung.com/java-read-file
+
+#NPE Null Point Exception for JPA Repository
+@Autowired
+MyRepo repo; //shouldn't have private static etc.
+
+#CrudRepository vs JpaRepository
+JpaRepository is just an extension of CrudRepository. 
+So use CrudRepository when it's enough.
+
+#Custom Query in CrudRepository
+```java
+@Repository
+public interface MyRepository extends CrudRepository<Paper, Long> {
+    @Query("SELECT p FROM Table p WHERE p.myColumn = :myValue")
+    List<myColumn> findByValue(@Param("myValue") long myValue);
+}
+```
+
+#REST
+> PutMapping
+
+```java
+@PutMapping(path="/update")
+public ResponseEntity<UserResponse> updateUser(@Valid @RequestBody User user) {
+    return userRepository.save(user);
+}
+```
+
+#lambda for optional, one line ifPresent.orElse
+> Note that they have dedicated function for Java 9 and above.
+
+```java
+final Optional<MyClass> value = getSomeValue();
+myMap.put("key", value.map(MyClass::methodReturnsDouble).orElse(0.0f));
+```
+> if value is empty -> return 0, or the value by the method.
+
+#Terniary operator indendation
+```java
+result = (foo == bar) ? result1 :
+         (foo == baz) ? result2 :
+         (foo == xyz) ? result3 :
+                        result4;
+```

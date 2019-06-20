@@ -65,6 +65,25 @@ http://appsdeveloperblog.com/reading-application-properties-spring-boot/
 #Bean & Autowired
 https://stackoverflow.com/questions/34172888/difference-between-bean-and-autowired	
 
+# Missing Bean.
+ > Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean
+
+#Tutorials
+Upload file
+	Spring tutorial: https://spring.io/guides/gs/uploading-files/#initial
+	GCP tutorial: https://codelabs.developers.google.com/codelabs/spring-cloud-gcp-gcs/
+
+#Spring MVC NoSuchMethodError 500
+Check the mvc versions.
+Removing javax.servlet version helped.
+```xml
+<artifactId>javax.servlet-api</artifactId>
+<!-- <version>3.1.0</version> -->
+```            
+
+#Context path
+https://qiita.com/kazuki43zoo/items/e12a72d4ac4de418ee37
+
 #Compressing Resources/API
 server.compression.enabled=true
 server.compression.mime-types=application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css
@@ -94,5 +113,12 @@ public void clearCache() {
 }
 ```
 
+#Encoding issue specially with gcloud
+spring.http.encoding.force=true
+
+More: check the Response Header.
+
+
 #Document in gradle.
 compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+
