@@ -190,3 +190,6 @@ Step 3: Reset the upstream branch for the new-name local branch. Switch to the b
 #Conflict resolution cached
 `git rerere` 
 https://www.codementor.io/citizen428/git-tutorial-10-common-git-problems-and-how-to-fix-them-aajv0katd	
+
+#Git reflog
+See rebase logs. Even after the rebase.

@@ -93,3 +93,6 @@ Only with Spring (needs @EnableScheduling and @EnableCaching)
 public void clearCache() {      
 }
 ```
+
+#Document in gradle.
+compile("org.springframework.boot:spring-boot-starter-data-mongodb")

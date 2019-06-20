@@ -233,3 +233,45 @@ Enum:  @Enumerated(EnumType.STRING) is requried above the field.
 GeneratedValue ID is also included in the constructor.
 Only way is to use class inheritance.
 https://stackoverflow.com/questions/48784923/is-using-id-field-in-allargsconstructor-while-using-spring-jpa-correct
+
+#Java Instant Codec (Kotlin)
+```java 
+class InstantCodec : Codec<Instant> {
+
+    enum class Fields(val value: String) {
+        SECONDS("seconds"),
+        NANOS("nanos")
+    }
+
+    override fun getEncoderClass(): Class<Instant> {
+        return Instant::class.java
+    }
+
+    override fun encode(bsonWriter: BsonWriter, instant: Instant, encoderContext: EncoderContext) {
+        bsonWriter.writeStartDocument()
+        bsonWriter.writeInt64(Fields.SECONDS.value, instant.getEpochSecond())
+        bsonWriter.writeInt32(Fields.NANOS.value, instant.getNano())
+        bsonWriter.writeEndDocument()
+    }
+
+    override fun decode(bsonReader: BsonReader, decoderContext: DecoderContext): Instant {
+        bsonReader.readStartDocument()
+        val seconds = bsonReader.readInt64(Fields.SECONDS.value)
+        val nanos = bsonReader.readInt32(Fields.NANOS.value)
+        bsonReader.readEndDocument()
+        return Instant.ofEpochSecond(seconds, nanos.toLong())
+    }
+
+}
+```
+
+#Jackson Serializer/Deserializer
+>Use below
+    registerModule(new JSR310Module()) or findAndRegisterModules()
+    > JavaTimeModule, since JSR310Module is deprecated.
+> In this case, no need of Codec for Instant
+
+https://stackoverflow.com/questions/27952472/serialize-deserialize-java-8-java-time-with-jackson-json-mapper    
+
+#Cron
+Cron schedule is absolute: "0 0 */6 * * *", here */6 is same as 0/6, or 0,6,12,18.

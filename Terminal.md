@@ -293,4 +293,5 @@ tail -f is for monitoring multiple files
 zip -e archivename.zip filetoprotect.txt
 zip -er archive.zip /path/to/directory/
 
-Jh0-Pqe-8Zu
+#Listen to the port (linux)
+lsof -i :8000
