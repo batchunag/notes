@@ -171,3 +171,8 @@ if ("key" in myMap){
 #add class
 var element = document.getElementById("div1");
 element.classList.add("otherclass");
+
+#copyright current year
+```js 
+new Date().getFullYear();
+```

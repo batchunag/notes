@@ -118,6 +118,21 @@ spring.http.encoding.force=true
 
 More: check the Response Header.
 
+#Flyway config
+https://www.baeldung.com/database-migrations-with-flyway
+
+#Configuration
+spring.profiles.active=dev (in application.properties)
+--> application-dev.properties will be used.
+
+#Redirect & Forward difference
+	Redirect: Url changes
+	Forward: Url doesn't change but Spring resolves in the back.
+> Forward with ModelAndView
+```java
+//inside ModelAndView doGet() method 
+return new ModelAndView("forward:/another-path");
+```
 
 #Document in gradle.
 compile("org.springframework.boot:spring-boot-starter-data-mongodb")

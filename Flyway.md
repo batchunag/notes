@@ -20,5 +20,17 @@ flyway repair
 >  org.flywaydb.core.api.FlywayException: Unable to connect to the database. Configure the url, user and password!	
 	Maven tool from Intellij works.
 
-
 com.mysql.jdbc.Driver is updated to com.mysql.cj.jdbc.Driver
+
+> (using password: NO) Error Code : 1045
+	Couldn't resolve.
+
+> config: following works.(only in maven. i.e. pom.xml)
+ mvn flyway:migrate -Dflyway.configFile=./src/main/resources/flyway.properties
+ 	Maven plugin is necessary: https://flywaydb.org/documentation/maven/#goals
+
+
+> ERROR:
+Unable to obtain Jdbc connection from DataSource (jdbc:mysql://localhost:3306/mydb?serverTimezone=UTC) for user 'user': Could not connect to localhost:3306: unexpected end of stream, read 0 bytes from 4
+
+--> Due to different mysql version.

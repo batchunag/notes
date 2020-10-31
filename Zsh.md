@@ -1,4 +1,4 @@
-#Importand files
+#Important files
 ~/.zshrc
 
 

@@ -1,6 +1,9 @@
 #See CPU, Memory usage of containers
 docker ps -q | xargs  docker stats --no-stream
 
+#See all containers including exited, dead.
+docker ps -a
+
 #docker pause, unpause 
 #docker ps, stop, start
 
@@ -45,10 +48,13 @@ docker inspect <container ID>
 #Start docker daemon
 boot2docker up
 
+Check the VM
+
 #restart hobo
 docker stop hobo-consul
 docker rm hobo-consul
 consul-start
+
 
 #Top-like interface for container metrics
 ctop

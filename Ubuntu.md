@@ -98,3 +98,19 @@ To find all socket files on your system run:
 https://www.zyxware.com/articles/5539/solved-cant-connect-to-local-mysql-server-through-socket-var-run-mysqld-mysqld-sock
 
 #Install programs(ready to run) under /opt/ directory.
+
+#Hibernation & Suspend, Sleep
+To disable hibernation
+`sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target`
+To enable hibernation
+`sudo systemctl mask`
+To check the status
+`sudo systemctl is-enabled `
+
+
+
+
+#Luks issue
+https://askubuntu.com/questions/567730/gave-up-waiting-for-root-device-ubuntu-vg-root-doesnt-exist
+
+https://gist.github.com/gvtulder/881e9cce73758339bd25937c254f7960

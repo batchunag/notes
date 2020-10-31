@@ -52,3 +52,6 @@ http://tipsonubuntu.com/2017/05/30/install-sublime-text-3-ubuntu-16-04-official-
 #Print code to browser
 Print to HTML--> Not showing to browser on Ubuntu 18.04.
 ExportHtml--> Use right click on mouse. Can be customized with hot key.
+
+#Insert mode
+Alt(option)+Cmd+O
