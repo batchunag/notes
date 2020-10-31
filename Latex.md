@@ -194,3 +194,12 @@ dp[i][j] = \sum_{k=0}^j dp[i-1][j-k]
 \titlespacing*{\section}
 {0pt}{*1}{*1}
 --> times 1
+
+
+#matrix
+\begin{pmatrix}
+\Phi_{11} & \Phi_{12}\\
+\Phi_{21} & \Phi_{22}
+\end{pmatrix}
+>pmatrix: ( round
+bmatrix: [ bracket

@@ -19,7 +19,8 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/cu
 Open up ~/.zshrc and add zsh-syntax-highlighting to the end of the plugins=( ... ) array.
 
 #Switch user
-sudo -u chunag zsh
+sudo -u username zsh
+sudo su - user
 
 Install iTerm
 Install Zsh
@@ -293,14 +294,15 @@ tail -f is for monitoring multiple files
 zip -e archivename.zip filetoprotect.txt
 zip -er archive.zip /path/to/directory/
 
-(Happens to awk or pebble etc.)
+(Happens to awk xor pebble etc.)
 #dyld: Library not loaded: /usr/local/opt/readline/lib/libreadline.7.dylib
 brew info readline
 brew switch readline 7.0.5
 解決法: readlineをインストールし直す
 https://qiita.com/nwtgck/items/f5427c0d0f7827658bd5
 
-One way:
+> One way:
+ cd /usr/local/opt/readline/lib
  sudo ln -s libreadline.8.0.dylib libreadline.7.dylib
 
 #Start Stop Global Protect
@@ -311,6 +313,21 @@ start)
 stop)
     `launchctl remove com.paloaltonetworks.gp.pangps`
     `launchctl remove com.paloaltonetworks.gp.pangpa`
+
+#readlink -f is broken
+use greadlink or double check the environment setup.    
+
+#nslookup
+nslookup some-address
+nslookup some-address specific-server
+> nslookup -type=NS some-address 
+	Gives where the DNS is resolved.
+
+#tcpflow
+> sudo tcpflow -c 
+	writes network logs to file.
+
+
 
 #Listen to the port (linux)
 lsof -i :8000    

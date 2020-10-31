@@ -175,6 +175,7 @@ final Promise<Void> voidPromise =  createMock(Promise.class);
 expect(voidPromise.claim()).andReturn(null);
 
 #Parameterized
+More info: https://www.baeldung.com/parameterized-tests-junit-5
 > Required for the test class
     @RunWith(JUnitParamsRunner.class) 
     public class MyClassTest () {
@@ -358,3 +359,28 @@ result = (foo == bar) ? result1 :
          (foo == xyz) ? result3 :
                         result4;
 ```
+
+#Simple get request
+```java
+@Scheduled(fixedRate = DAY_IN_MILLIS)
+public void getData() throws IOException {
+    final URL url = new URL("http://example.com");
+    final HttpURLConnection con = (HttpURLConnection) url.openConnection();
+    con.setRequestMethod("GET");
+    con.setRequestProperty("Content-Type", "application/json");
+//        final String contentType = con.getHeaderField("Content-Type");
+    con.setConnectTimeout(5000);
+    con.setReadTimeout(5000);
+
+    final int status = con.getResponseCode();
+    final BufferedReader in = new BufferedReader(
+            new InputStreamReader(con.getInputStream()));
+    String inputLine;
+    final StringBuffer content = new StringBuffer();
+    while ((inputLine = in.readLine()) != null) {
+        content.append(inputLine);
+    }
+    in.close();
+    con.disconnect();
+}
+```    

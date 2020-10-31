@@ -233,4 +233,13 @@ emission from client.
 
 
 #Change version
+nvm ls
 nvm use 8.9.4
+
+#change registry
+default one.
+`npm set registry https://registry.npmjs.org/`
+
+#see npm configs
+`npm config ls -l`
+

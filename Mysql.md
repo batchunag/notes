@@ -3,8 +3,10 @@ https://dev.mysql.com/downloads/mysql/
 	Installed to /usr/local/mysql/bin/mysql
 	sudo mysql.server start
 > ERROR! The server quit without updating PID file
+	It's because OSX mysql & sudo mysql is different.
 
-
+#log files
+mysql -uroot -se "SHOW VARIABLES" | grep -e log_error -e general_log -e slow_query_log
 
 #Workout for mysql socket error on OSX because of MAMP
 `Can't connect to local MySQL server through socket '/tmp/mysql.sock'`
@@ -62,3 +64,19 @@ SHOW DATABASES
 java.sql.SQLSyntaxErrorException: Table 'mydb.hibernate_sequence' doesn't exist
 ->	use @GeneratedValue(strategy = GenerationType.IDENTITY)
  instead of @GeneratedValue(strategy = GenerationType.AUTO)
+
+
+#Starting MySQL
+> ERROR! The server quit without updating PID file
+	Try Uninstall & install
+
+
+#Uninstalling with brew
+`brew uninstall mysql`
+`rm /usr/local/etc/my.cnf`
+`rm -rf /usr/local/var/mysql`
+> If necessary
+`rm -rf /usr/local/Cellar/mysql@5.7`
+`rm /etc/my.cnf`
+
+
